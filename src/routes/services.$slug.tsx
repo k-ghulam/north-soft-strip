@@ -2,13 +2,16 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CheckCircle2, ArrowRight, Phone, MessageCircle } from "lucide-react";
 import { SERVICES, SITE } from "@/lib/site";
 import { SectionHeader } from "@/components/SectionHeader";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import ceiling from "@/assets/service-ceiling.jpg";
-import retail from "@/assets/service-retail.jpg";
-import hero from "@/assets/hero-strip-out.jpg";
 
-const imgMap: Record<string, string> = { kitchen, bathroom, ceiling, retail };
+// Clean asset mapping using relative paths from public assets directory
+const imgMap: Record<string, string> = {
+  kitchen: "/assets/service-kitchen.jpg",
+  bathroom: "/assets/service-bathroom.jpg",
+  ceiling: "/assets/service-ceiling.jpg",
+  retail: "/assets/service-retail.jpg",
+};
+
+const defaultHero = "/assets/hero-strip-out.jpg";
 
 export const Route = createFileRoute("/services/$slug")({
   component: ServiceDetail,
@@ -61,14 +64,14 @@ const benefits = [
 
 function ServiceDetail() {
   const s = Route.useLoaderData();
-  const img = imgMap[s.img] || hero;
+  const img = imgMap[s.img] || defaultHero;
   const related = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
 
   return (
     <>
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <img src={img} alt="" width={1920} height={1200} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,43,70,0.75) 0%, rgba(15,43,70,0.9) 100%)" }} />
+        <div className="absolute inset-0 bg-navy/85" />
         <div className="container-x relative">
           <span className="eyebrow text-orange-soft">Soft Strip Service</span>
           <h1 className="mt-3 text-4xl md:text-6xl font-extrabold text-white max-w-4xl leading-[1.05]">{s.title} in Liverpool &amp; Merseyside</h1>

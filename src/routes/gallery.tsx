@@ -1,15 +1,8 @@
+// src/routes/gallery.tsx
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import ceiling from "@/assets/service-ceiling.jpg";
-import retail from "@/assets/service-retail.jpg";
-import before from "@/assets/stage-before.jpg";
-import during from "@/assets/stage-during.jpg";
-import completed from "@/assets/stage-completed.jpg";
-import hero from "@/assets/hero-strip-out.jpg";
 
 export const Route = createFileRoute("/gallery")({
   component: Gallery,
@@ -55,45 +48,84 @@ type Item = {
 };
 
 const items: Item[] = [
-  { src: hero, category: "Houses", span: "lg:row-span-2 lg:col-span-2",
+  { 
+    src: "/assets/hero-strip-out.jpg", 
+    category: "Houses", 
+    span: "lg:row-span-2 lg:col-span-2",
     alt: "North Soft Strip crew removing plasterboard ceiling in a Liverpool terraced house during soft strip",
-    caption: "Terraced house soft strip · Wavertree, Liverpool" },
-  { src: kitchen, category: "Kitchens",
+    caption: "Terraced house soft strip · Wavertree, Liverpool" 
+  },
+  { 
+    src: "/assets/kitchen-cabinet-strip.jpg", 
+    category: "Kitchens",
     alt: "Fitted kitchen units and worktops being carefully removed during a residential kitchen strip out in Merseyside",
-    caption: "Kitchen strip out · Aigburth" },
-  { src: bathroom, category: "Bathrooms",
+    caption: "Kitchen strip out · Aigburth" 
+  },
+  { 
+    src: "/assets/bathroom-wall-scrape.jpg", 
+    category: "Bathrooms",
     alt: "Bathroom suite, tiles and pipework stripped back to bare walls ready for a new fit-out",
-    caption: "Bathroom strip out · Bootle flat" },
-  { src: during, category: "Flats", span: "lg:col-span-2",
+    caption: "Bathroom strip out · Bootle flat" 
+  },
+  { 
+    src: "/assets/stage-during.jpg", 
+    category: "Flats", 
+    span: "lg:col-span-2",
     alt: "Two-bed apartment mid-strip with dust sheeting, floor protection and bagged waste ready for removal",
-    caption: "Apartment soft strip in progress · Liverpool waterfront" },
-  { src: ceiling, category: "Ceilings",
+    caption: "Apartment soft strip in progress · Liverpool waterfront" 
+  },
+  { 
+    src: "/assets/service-ceiling.jpg", 
+    category: "Ceilings",
     alt: "Suspended ceiling tiles and grid being taken down safely in a light commercial unit",
-    caption: "Suspended ceiling removal · St Helens" },
-  { src: retail, category: "Shops",
+    caption: "Suspended ceiling removal · St Helens" 
+  },
+  { 
+    src: "/assets/service-retail.jpg", 
+    category: "Shops",
     alt: "Independent shop unit stripped of shelving, counters and signage ready for the next tenant",
-    caption: "Retail unit strip out · Liverpool city centre" },
-  { src: before, category: "Garages",
+    caption: "Retail unit strip out · Liverpool city centre" 
+  },
+  { 
+    src: "/assets/stage-before.jpg", 
+    category: "Garages",
     alt: "Cluttered garage interior photographed before a full strip out and clearance in Wirral",
-    caption: "Garage · before works · Wirral" },
-  { src: completed, category: "Completed", span: "lg:col-span-2",
+    caption: "Garage · before works · Wirral" 
+  },
+  { 
+    src: "/assets/stage-completed.jpg", 
+    category: "Completed", 
+    span: "lg:col-span-2",
     alt: "Empty, swept and handover-ready property after completed soft strip and licensed waste removal",
-    caption: "Handover-ready · completed project · Sefton" },
-  { src: kitchen, category: "Houses",
+    caption: "Handover-ready · completed project · Sefton" 
+  },
+  { 
+    src: "/assets/kitchen-before.jpg", 
+    category: "Houses",
     alt: "Semi-detached family home interior mid soft strip with fixtures and fittings being removed",
-    caption: "Semi-detached house strip · Knowsley" },
-  { src: bathroom, category: "Bathrooms",
+    caption: "Semi-detached house strip · Knowsley" 
+  },
+  { 
+    src: "/assets/bathtub-removal.jpg", 
+    category: "Bathrooms",
     alt: "Ensuite bathroom stripped to bare substrate with tiles and adhesive fully removed",
-    caption: "Ensuite strip out · Southport" },
-  { src: ceiling, category: "Ceilings",
+    caption: "Ensuite strip out · Southport" 
+  },
+  { 
+    src: "/assets/ceiling-board-removal.jpg", 
+    category: "Ceilings",
     alt: "Plasterboard ceiling taken down carefully in a Liverpool ground-floor flat during soft strip",
-    caption: "Plasterboard ceiling down · Liverpool" },
-  { src: retail, category: "Shops",
+    caption: "Plasterboard ceiling down · Liverpool" 
+  },
+  { 
+    src: "/assets/commercial-strip-out.jpg", 
+    category: "Shops",
     alt: "Café interior stripped of seating, counter and wall panelling ready for refurbishment",
-    caption: "Café strip out · Bootle" },
+    caption: "Café strip out · Bootle" 
+  },
 ];
 
-const CATEGORIES: ("All" | Category)[] = [
+const CATEGORIES: ("All" | Category[])[number][] = [
   "All", "Houses", "Flats", "Garages", "Shops", "Kitchens", "Bathrooms", "Ceilings", "Completed",
 ];
 
@@ -176,7 +208,8 @@ function Gallery() {
             })}
           </div>
 
-          <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 auto-rows-[220px]">
+          {/* Changed auto-rows-[220px] to auto-rows-55 to resolve Tailwind CSS warnings */}
+          <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 auto-rows-55">
             {filtered.map((it, i) => (
               <button
                 key={`${it.src}-${i}`}
@@ -218,7 +251,7 @@ function Gallery() {
           role="dialog"
           aria-modal="true"
           aria-label={current.caption}
-          className="fixed inset-0 z-[80] bg-navy-deep/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up"
+          className="fixed inset-0 z-50 bg-navy-deep/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up"
           onClick={close}
         >
           <button

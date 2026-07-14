@@ -1,28 +1,45 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, MessageCircle } from "lucide-react";
 import { SITE } from "@/lib/site";
 
-import hero from "@/assets/hero-strip-out.jpg";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import ceiling from "@/assets/service-ceiling.jpg";
-import retail from "@/assets/service-retail.jpg";
+interface Slide {
+  img: string;
+  eyebrow: string;
+  title: string;
+  copy: string;
+}
 
-const SLIDES = [
-  { img: hero, eyebrow: "Residential Specialists", title: "Residential House Soft Strip", copy: "Precision soft strip for terraces, semis and detached homes across Liverpool & Merseyside." },
-  { img: kitchen, eyebrow: "Kitchen Preparation", title: "Kitchen Strip Out & Preparation", copy: "Units, worktops, tiles and appliances carefully removed — ready for your new fit-out." },
-  { img: bathroom, eyebrow: "Bathroom Clear-out", title: "Bathroom Strip Out & Clear-out", copy: "Suites, tiles and pipework removed cleanly, with all waste taken away." },
-  { img: ceiling, eyebrow: "Structural Prep", title: "Garage Strip Out & Structural Prep", copy: "Full garage clearance and internal preparation, ready for conversion." },
-  { img: retail, eyebrow: "Commercial Services", title: "Commercial Soft Strip Services", copy: "Shops, cafés, salons and light commercial units stripped ready for refit." },
+const SLIDES: Slide[] = [
+  { img: "/assets/hero-strip-out.jpg", eyebrow: "Residential Specialists", title: "Residential House Soft Strip", copy: "Precision soft strip for terraces, semis and detached homes across Liverpool & Merseyside." },
+  { img: "/assets/service-kitchen.jpg", eyebrow: "Kitchen Preparation", title: "Kitchen Strip Out & Preparation", copy: "Units, worktops, tiles and appliances carefully removed — ready for your new fit-out." },
+  { img: "/assets/service-bathroom.jpg", eyebrow: "Bathroom Clear-out", title: "Bathroom Strip Out & Clear-out", copy: "Suites, tiles and pipework removed cleanly, with all waste taken away." },
+  { img: "/assets/service-ceiling.jpg", eyebrow: "Structural Prep", title: "Garage Strip Out & Structural Prep", copy: "Full garage clearance and internal preparation, ready for conversion." },
+  { img: "/assets/service-retail.jpg", eyebrow: "Commercial Services", title: "Commercial Soft Strip Services", copy: "Shops, cafés, salons and light commercial units stripped ready for refit." },
 ];
 
 export function HeroSlider() {
-  const [i, setI] = useState(0);
+  const [i, setI] = useState<number>(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setI((p) => (p + 1) % SLIDES.length);
+    }, 6000);
+  };
+
   useEffect(() => {
-    const t = setInterval(() => setI((p) => (p + 1) % SLIDES.length), 6000);
-    return () => clearInterval(t);
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, []);
+
+  const handleSlideSelect = (idx: number) => {
+    setI(idx);
+    startTimer(); // Reset the 6-second timer upon manual selection
+  };
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
@@ -33,12 +50,14 @@ export function HeroSlider() {
           alt={s.title}
           width={1920}
           height={1200}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${idx === i ? "opacity-100 scale-100" : "opacity-0"}`}
-          style={{ transform: idx === i ? "scale(1.04)" : "scale(1)", transition: "opacity 1400ms ease, transform 8000ms ease-out" }}
+          className={`absolute inset-0 h-full w-full object-cover transition-all duration-[1400ms] ease-in-out ${
+            idx === i ? "opacity-100 scale-[1.04]" : "opacity-0 scale-100"
+          }`}
+          style={{ transitionProperty: "opacity, transform" }}
           fetchPriority={idx === 0 ? "high" : "low"}
         />
       ))}
-      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,43,70,0.55) 0%, rgba(15,43,70,0.9) 100%)" }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0f2b46]/55 to-[#0f2b46]/90" />
 
       <div className="container-x relative pt-32 pb-24 md:pt-40 md:pb-32">
         <div key={i} className="max-w-3xl animate-fade-up">
@@ -82,9 +101,11 @@ export function HeroSlider() {
           {SLIDES.map((_, idx) => (
             <button
               key={idx}
-              onClick={() => setI(idx)}
+              onClick={() => handleSlideSelect(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1.5 rounded-full transition-all ${idx === i ? "w-10 bg-orange" : "w-5 bg-white/60 hover:bg-white/70"}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                idx === i ? "w-10 bg-orange" : "w-5 bg-white/60 hover:bg-white/70"
+              }`}
             />
           ))}
         </div>

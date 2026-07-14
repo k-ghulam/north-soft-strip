@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, SERVICES, AREAS } from "@/lib/site";
-import logo from "@/assets/logo.png";
+
+const logo = "/assets/logo.png"; // Changed to static public asset URL
 
 export function SiteFooter() {
   return (

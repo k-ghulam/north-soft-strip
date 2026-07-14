@@ -2,7 +2,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
 import { AREAS, SERVICES, SITE } from "@/lib/site";
 import { SectionHeader } from "@/components/SectionHeader";
-import hero from "@/assets/hero-strip-out.jpg";
+
+const defaultHero = "/assets/hero-strip-out.jpg";
 
 export const Route = createFileRoute("/areas/$slug")({
   component: Area,
@@ -32,9 +33,9 @@ function Area() {
   const a = Route.useLoaderData();
   return (
     <>
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
-        <img src={hero} alt="" width={1920} height={1200} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,43,70,0.75) 0%, rgba(15,43,70,0.92) 100%)" }} />
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <img src={defaultHero} alt="" width={1920} height={1200} className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-navy/85" />
         <div className="container-x relative">
           <span className="eyebrow text-orange-soft">Local Coverage</span>
           <h1 className="mt-3 text-4xl md:text-6xl font-extrabold text-white leading-[1.05] max-w-4xl">Soft Strip Contractors in {a.name}</h1>
@@ -45,6 +46,7 @@ function Area() {
           </div>
         </div>
       </section>
+
       <section className="py-20">
         <div className="container-x max-w-3xl">
           <SectionHeader eyebrow={a.name} title={`Local soft strip contractors serving ${a.name}.`} />
@@ -54,6 +56,7 @@ function Area() {
           </div>
         </div>
       </section>
+
       <section className="py-20 bg-mist">
         <div className="container-x">
           <SectionHeader eyebrow="Popular in this area" title={`Services we offer in ${a.name}`} />

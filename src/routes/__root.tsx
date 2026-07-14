@@ -1,3 +1,4 @@
+// src/routes/__root.tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet, createRootRouteWithContext, useRouter,
@@ -60,8 +61,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "North Soft Strip — Liverpool Soft Strip Contractors" },
       { name: "twitter:description", content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a21e0f14-0e2e-4f56-a7b1-0c7b53d6156f/id-preview-8204f03a--7e3757ee-6ac5-47c1-889c-4a270ea6919b.lovable.app-1783630725387.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a21e0f14-0e2e-4f56-a7b1-0c7b53d6156f/id-preview-8204f03a--7e3757ee-6ac5-47c1-889c-4a270ea6919b.lovable.app-1783630725387.png" },
+      { property: "og:image", content: "/assets/hero-strip-out.jpg" },
+      { name: "twitter:image", content: "/assets/hero-strip-out.jpg" },
       { name: "google-site-verification", content: "xDga_rCMoS00bSrZnFbxNIO6ZQLUkwjNbrpozKz9V-o" },
     ],
     links: [
@@ -78,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         "@type": "LocalBusiness",
         name: "North Soft Strip",
         image: "https://northsoftstrip.co.uk/logo.png",
-        telephone: "+44 7340 000 0583",
+        telephone: "+44 7340 000583",
         email: "info@northsoftstrip.co.uk",
         priceRange: "££",
         address: { "@type": "PostalAddress", addressLocality: "Liverpool", addressRegion: "Merseyside", addressCountry: "GB" },

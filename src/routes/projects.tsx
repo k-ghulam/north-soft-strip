@@ -1,13 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Clock } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import { SectionHeader } from "@/components/SectionHeader";
-import before from "@/assets/stage-before.jpg";
-import during from "@/assets/stage-during.jpg";
-import completed from "@/assets/stage-completed.jpg";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import retail from "@/assets/service-retail.jpg";
 
 export const Route = createFileRoute("/projects")({
   component: Projects,
@@ -24,10 +17,46 @@ export const Route = createFileRoute("/projects")({
 });
 
 const projects = [
-  { title: "3-bed Victorian terrace strip out", type: "Terraced house", location: "Wavertree", duration: "3 days", before, during, completed, quote: "Turned up on time, cleaner than when they arrived." },
-  { title: "Kitchen & bathroom strip", type: "Semi-detached", location: "Aigburth", duration: "2 days", before: kitchen, during, completed, quote: "Protected the stairs, bagged everything." },
-  { title: "1-bed flat full strip", type: "Apartment", location: "City centre", duration: "2 days", before: bathroom, during, completed, quote: "Perfect for our BTL refurb." },
-  { title: "High-street salon strip out", type: "Light commercial", location: "Bootle", duration: "3 days", before: retail, during, completed, quote: "Ready for the fit-out team on the Monday." },
+  { 
+    title: "3-bed Victorian terrace strip out", 
+    type: "Terraced house", 
+    location: "Wavertree", 
+    duration: "3 days", 
+    before: "/assets/stage-before.jpg", 
+    during: "/assets/stage-during.jpg", 
+    completed: "/assets/stage-completed.jpg", 
+    quote: "Turned up on time, cleaner than when they arrived." 
+  },
+  { 
+    title: "Kitchen & bathroom strip", 
+    type: "Semi-detached", 
+    location: "Aigburth", 
+    duration: "2 days", 
+    before: "/assets/service-kitchen.jpg", 
+    during: "/assets/stage-during.jpg", 
+    completed: "/assets/stage-completed.jpg", 
+    quote: "Protected the stairs, bagged everything." 
+  },
+  { 
+    title: "1-bed flat full strip", 
+    type: "Apartment", 
+    location: "City centre", 
+    duration: "2 days", 
+    before: "/assets/service-bathroom.jpg", 
+    during: "/assets/stage-during.jpg", 
+    completed: "/assets/stage-completed.jpg", 
+    quote: "Perfect for our BTL refurb." 
+  },
+  { 
+    title: "High-street salon strip out", 
+    type: "Light commercial", 
+    location: "Bootle", 
+    duration: "3 days", 
+    before: "/assets/service-retail.jpg", 
+    during: "/assets/stage-during.jpg", 
+    completed: "/assets/stage-completed.jpg", 
+    quote: "Ready for the fit-out team on the Monday." 
+  },
 ];
 
 function Projects() {

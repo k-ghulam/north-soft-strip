@@ -2,12 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SERVICES } from "@/lib/site";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import ceiling from "@/assets/service-ceiling.jpg";
-import retail from "@/assets/service-retail.jpg";
 
-const imgMap: Record<string, string> = { kitchen, bathroom, ceiling, retail };
+// Replace imports with direct static string paths
+const imgMap: Record<string, string> = { 
+  kitchen: "/assets/service-kitchen.jpg", 
+  bathroom: "/assets/service-bathroom.jpg", 
+  ceiling: "/assets/service-ceiling.jpg", 
+  retail: "/assets/service-retail.jpg" 
+};
 
 export const Route = createFileRoute("/services/")({
   component: Services,

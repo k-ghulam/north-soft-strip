@@ -22,7 +22,7 @@ function Quote() {
   const [sent, setSent] = useState(false);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Front-end only — real submission wiring can be added later.
+    // Front-end state handler
     setSent(true);
   };
   return (
@@ -57,8 +57,8 @@ function Quote() {
                 </div>
                 <Field label="Property type" name="propertyType" placeholder="e.g. 3-bed terraced house, independent shop unit…" />
                 <div>
-                  <label className="text-sm font-semibold text-navy">Tell us about the job</label>
-                  <textarea name="message" rows={5} required placeholder="Rooms involved, what's staying, timeline…" className="mt-2 w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange" />
+                  <label htmlFor="message" className="text-sm font-semibold text-navy">Tell us about the job</label>
+                  <textarea id="message" name="message" rows={5} required placeholder="Rooms involved, what's staying, timeline…" className="mt-2 w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange" />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-navy">Photos (optional)</label>
@@ -107,6 +107,7 @@ function Field({ label, name, type = "text", required, placeholder }: { label: s
     </div>
   );
 }
+
 function Select({ label, name, options }: { label: string; name: string; options: string[] }) {
   return (
     <div>

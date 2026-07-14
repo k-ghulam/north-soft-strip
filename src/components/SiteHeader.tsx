@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/site";
-import logo from "@/assets/logo.png";
+
+const logo = "/assets/logo.png"; // Changed to static public asset URL
 
 const nav = [
   { to: "/", label: "Home" },

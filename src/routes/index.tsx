@@ -1,18 +1,18 @@
+// src/routes/index.tsx
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, ArrowRight, Shield, Clock, PoundSterling, Sparkles, Users, Star, CheckCircle2, HardHat, Home, Store } from "lucide-react";
-
-import heroImg from "@/assets/hero-strip-out.jpg";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import ceiling from "@/assets/service-ceiling.jpg";
-import retail from "@/assets/service-retail.jpg";
-import before from "@/assets/stage-before.jpg";
-import during from "@/assets/stage-during.jpg";
-import completed from "@/assets/stage-completed.jpg";
 
 import { SITE, SERVICES, AREAS, PROPERTY_TYPES } from "@/lib/site";
 import { SectionHeader } from "@/components/SectionHeader";
 import { HeroSlider } from "@/components/HeroSlider";
+
+const faqs = [
+  { q: "What is soft strip?", a: "Soft strip is the careful removal of a building's non-structural interior — kitchens, bathrooms, ceilings, partitions, floor coverings, fixtures and fittings — leaving a clean shell ready for refurbishment." },
+  { q: "Do you cover the whole of Merseyside?", a: "Yes. We work across Liverpool, Wirral, Bootle, Knowsley, Sefton, Southport, St Helens and the wider Merseyside area." },
+  { q: "Are you insured?", a: "Fully. We carry public liability and employer's liability insurance, and we're licensed waste carriers with full duty-of-care paperwork." },
+  { q: "How quickly can you start?", a: "For most jobs we can be on site within a few days. Emergency and rapid-turnaround requests are welcome — just call us." },
+  { q: "Do you clear the waste too?", a: "Yes. Every quote includes site clearance and licensed waste removal by default. You get a clean, empty property back — no rubble left behind." },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -40,7 +40,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const imgMap: Record<string, string> = { kitchen, bathroom, ceiling, retail };
+// Clean and reliable path mapping using standard relative paths
+const imgMap: Record<string, string> = {
+  kitchen: "/assets/service-kitchen.jpg",
+  bathroom: "/assets/service-bathroom.jpg",
+  ceiling: "/assets/service-ceiling.jpg",
+  retail: "/assets/service-retail.jpg",
+};
 
 const trustBadges = [
   { icon: Shield, label: "Fully Insured" },
@@ -58,14 +64,6 @@ const testimonials = [
   { name: "Marcus D.", location: "Bootle", text: "Used North Soft Strip for a salon fit-out prep. Careful with the neighbours, tidy, and priced fairly. Would 100% use again.", rating: 5 },
   { name: "Priya S.", location: "Wirral", text: "Two-bed flat completely stripped ready for refurb. Great communication, honest quote, no surprises. Really appreciated the daily updates.", rating: 5 },
   { name: "Tom & Rachel", location: "Aigburth", text: "Kitchen and bathroom strip in a Victorian semi. Meticulous work — protected the stairs, bagged everything, took all waste away with paperwork.", rating: 5 },
-];
-
-const faqs = [
-  { q: "What is soft strip?", a: "Soft strip is the careful removal of a building's non-structural interior — kitchens, bathrooms, ceilings, partitions, floor coverings, fixtures and fittings — leaving a clean shell ready for refurbishment." },
-  { q: "Do you cover the whole of Merseyside?", a: "Yes. We work across Liverpool, Wirral, Bootle, Knowsley, Sefton, Southport, St Helens and the wider Merseyside area." },
-  { q: "Are you insured?", a: "Fully. We carry public liability and employer's liability insurance, and we're licensed waste carriers with full duty-of-care paperwork." },
-  { q: "How quickly can you start?", a: "For most most jobs we can be on site within a few days. Emergency and rapid-turnaround requests are welcome — just call us." },
-  { q: "Do you clear the waste too?", a: "Yes. Every quote includes site clearance and licensed waste removal by default. You get a clean, empty property back — no rubble left behind." },
 ];
 
 function Index() {
@@ -106,7 +104,8 @@ function Index() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img src={imgMap[s.img]} alt={s.title} loading="lazy" width={1200} height={900}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
+                  {/* Fixed warning: Changed from bg-gradient-to-t to Tailwind CSS v4's bg-linear-to-t */}
+                  <div className="absolute inset-0 bg-linear-to-t from-navy/70 via-navy/10 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                     <h3 className="text-white text-lg font-bold">{s.title}</h3>
                     <div className="h-9 w-9 rounded-full grid place-items-center bg-orange text-white group-hover:translate-x-1 transition-transform">
@@ -134,9 +133,9 @@ function Index() {
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
-              { img: before, tag: "01 · Before", title: "We survey the property", body: "Free on-site walk-through, transparent scope and a fixed quote. No hidden extras." },
-              { img: during, tag: "02 · During", title: "We strip it out", body: "Fixtures, fittings, kitchens, bathrooms, ceilings, partitions and floor coverings — carefully removed, room by room." },
-              { img: completed, tag: "03 · Completed", title: "We hand it back clean", body: "Waste removed, floors swept, ready for your builder. A blank canvas — not a building site." },
+              { img: "/assets/stage-before.jpg", tag: "01 · Before", title: "We survey the property", body: "Free on-site walk-through, transparent scope and a fixed quote. No hidden extras." },
+              { img: "/assets/stage-during.jpg", tag: "02 · During", title: "We strip it out", body: "Fixtures, fittings, kitchens, bathrooms, ceilings, partitions and floor coverings — carefully removed, room by room." },
+              { img: "/assets/stage-completed.jpg", tag: "03 · Completed", title: "We hand it back clean", body: "Waste removed, floors swept, ready for your builder. A blank canvas — not a building site." },
             ].map((step) => (
               <div key={step.tag} className="card-lift overflow-hidden">
                 <div className="relative aspect-[4/3]">

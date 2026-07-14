@@ -1,0 +1,49 @@
+export const SITE = {
+  name: "North Soft Strip",
+  tagline: "Soft Strip Contractors — Liverpool & Merseyside",
+  phone: "073400000583",
+  phoneHref: "tel:+4473400000583",
+  phoneDisplay: "07340 000 0583",
+  whatsappHref: "https://wa.me/4473400000583?text=Hi%20North%20Soft%20Strip%2C%20I%27d%20like%20a%20quote",
+  email: "info@northsoftstrip.co.uk",
+  city: "Liverpool",
+  region: "Merseyside",
+  hours: "Mon–Sat, 7:30am – 6:00pm",
+} as const;
+
+export const SERVICES = [
+  { slug: "house-strip-out", title: "House Strip Out", short: "Full residential strip out for terraces, semis and detached homes.", img: "kitchen" },
+  { slug: "flat-strip-out", title: "Flat & Apartment Strip Out", short: "Careful, low-noise strip out for flats and apartment blocks.", img: "bathroom" },
+  { slug: "kitchen-strip-out", title: "Kitchen Strip Out", short: "Units, worktops, tiles, appliances — removed and cleared.", img: "kitchen" },
+  { slug: "bathroom-strip-out", title: "Bathroom Strip Out", short: "Suites, tiles and pipework removed ready for the next fit-out.", img: "bathroom" },
+  { slug: "ceiling-removal", title: "Ceiling Removal", short: "Suspended and plasterboard ceilings taken down safely.", img: "ceiling" },
+  { slug: "partition-wall-removal", title: "Partition Wall Removal", short: "Stud and metal partitions removed, waste bagged and cleared.", img: "ceiling" },
+  { slug: "floor-covering-removal", title: "Floor Covering Removal", short: "Carpet, laminate, vinyl and tile removal down to subfloor.", img: "kitchen" },
+  { slug: "garage-strip-out", title: "Garage Strip Out", short: "Full garage clearance and strip ready for conversion.", img: "retail" },
+  { slug: "office-strip-out", title: "Office Strip Out", short: "Boutique office cat-A / cat-B strip out and clearance.", img: "retail" },
+  { slug: "retail-strip-out", title: "Retail & Shop Strip Out", short: "Cafés, salons and independent shops stripped ready for refit.", img: "retail" },
+  { slug: "commercial-strip-out", title: "Commercial Strip Out", short: "Light commercial units cleared for the incoming trade.", img: "retail" },
+  { slug: "internal-strip-out", title: "Internal Strip Out", short: "Selective internal strip out — leave what stays, remove what goes.", img: "kitchen" },
+  { slug: "site-clearance", title: "Site Clearance", short: "Post-strip clearance and full waste removal in one visit.", img: "ceiling" },
+  { slug: "waste-removal", title: "Waste Removal", short: "Licensed waste removal with full duty-of-care paperwork.", img: "ceiling" },
+  { slug: "property-preparation", title: "Property Preparation", short: "Handover-ready properties for builders and refurbishment teams.", img: "bathroom" },
+];
+
+export const AREAS = [
+  { slug: "liverpool", name: "Liverpool" },
+  { slug: "wirral", name: "Wirral" },
+  { slug: "bootle", name: "Bootle" },
+  { slug: "knowsley", name: "Knowsley" },
+  { slug: "sefton", name: "Sefton" },
+  { slug: "southport", name: "Southport" },
+  { slug: "st-helens", name: "St Helens" },
+  { slug: "merseyside", name: "Merseyside" },
+];
+
+export const PROPERTY_TYPES = [
+  "Terraced houses", "Semi-detached houses", "Detached houses", "Bungalows",
+  "Flats & apartments", "Maisonettes", "Garages", "Conservatories",
+  "Extensions", "Garden buildings", "Independent retail shops", "Cafés & restaurants",
+  "Hair & beauty salons", "Barbers", "Boutique offices", "Clinics",
+  "Residential blocks", "Light commercial units",
+];

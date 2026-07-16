@@ -22,9 +22,9 @@ const projects = [
     type: "Terraced house", 
     location: "Wavertree", 
     duration: "3 days", 
-    before: "/assets/stage-before.jpg", 
-    during: "/assets/stage-during.jpg", 
-    completed: "/assets/stage-completed.jpg", 
+    before: "/assets/flat-strip-out.jpeg", 
+    during: "/assets/partition-wall-removal.jpeg", 
+    completed: "/assets/property-preparation.jpeg", 
     quote: "Turned up on time, cleaner than when they arrived." 
   },
   { 
@@ -32,9 +32,9 @@ const projects = [
     type: "Semi-detached", 
     location: "Aigburth", 
     duration: "2 days", 
-    before: "/assets/service-kitchen.jpg", 
-    during: "/assets/stage-during.jpg", 
-    completed: "/assets/stage-completed.jpg", 
+    before: "/assets/kitchen-strip-out.jpeg", 
+    during: "/assets/partition-wall-removal.jpeg", 
+    completed: "/assets/property-preparation.jpeg", 
     quote: "Protected the stairs, bagged everything." 
   },
   { 
@@ -42,9 +42,9 @@ const projects = [
     type: "Apartment", 
     location: "City centre", 
     duration: "2 days", 
-    before: "/assets/service-bathroom.jpg", 
-    during: "/assets/stage-during.jpg", 
-    completed: "/assets/stage-completed.jpg", 
+    before: "/assets/bathroom-strip-out.jpeg", 
+    during: "/assets/partition-wall-removal.jpeg", 
+    completed: "/assets/property-preparation.jpeg", 
     quote: "Perfect for our BTL refurb." 
   },
   { 
@@ -52,9 +52,9 @@ const projects = [
     type: "Light commercial", 
     location: "Bootle", 
     duration: "3 days", 
-    before: "/assets/service-retail.jpg", 
-    during: "/assets/stage-during.jpg", 
-    completed: "/assets/stage-completed.jpg", 
+    before: "/assets/commercial-strip-out.jpeg", 
+    during: "/assets/partition-wall-removal.jpeg", 
+    completed: "/assets/property-preparation.jpeg", 
     quote: "Ready for the fit-out team on the Monday." 
   },
 ];

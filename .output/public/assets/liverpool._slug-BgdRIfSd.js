@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DGeXAQPT.js";var t=e(),n=({error:e})=>(0,t.jsxs)(`div`,{className:`pt-40 text-center`,children:[`Something went wrong. `,String(e)]});export{n as errorComponent};

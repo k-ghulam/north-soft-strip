@@ -2,11 +2,6 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 import { SITE, SERVICES } from "@/lib/site";
 import { SectionHeader } from "@/components/SectionHeader";
-import hero from "@/assets/hero-strip-out.jpg";
-import kitchen from "@/assets/service-kitchen.jpg";
-import bathroom from "@/assets/service-bathroom.jpg";
-import ceiling from "@/assets/service-ceiling.jpg";
-import retail from "@/assets/service-retail.jpg";
 
 type Page = {
   slug: string;
@@ -16,8 +11,13 @@ type Page = {
   benefits: string[];
   img: string;
 };
-
-const IMG: Record<string, string> = { hero, kitchen, bathroom, ceiling, retail };
+const IMG: Record<string, string> = {
+  hero: "/assets/house-strip-out.jpeg",
+  kitchen: "/assets/kitchen-strip-out.jpeg",
+  bathroom: "/assets/bathroom-strip-out.jpeg",
+  ceiling: "/assets/ceiling-removal.jpeg",
+  retail: "/assets/commercial-strip-out.jpeg",
+};
 
 const PAGES: Page[] = [
   {

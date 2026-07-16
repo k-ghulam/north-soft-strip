@@ -12,21 +12,96 @@ export const SITE = {
 } as const;
 
 export const SERVICES = [
-  { slug: "house-strip-out", title: "House Strip Out", short: "Full residential strip out for terraces, semis and detached homes.", img: "kitchen" },
-  { slug: "flat-strip-out", title: "Flat & Apartment Strip Out", short: "Careful, low-noise strip out for flats and apartment blocks.", img: "bathroom" },
-  { slug: "kitchen-strip-out", title: "Kitchen Strip Out", short: "Units, worktops, tiles, appliances — removed and cleared.", img: "kitchen" },
-  { slug: "bathroom-strip-out", title: "Bathroom Strip Out", short: "Suites, tiles and pipework removed ready for the next fit-out.", img: "bathroom" },
-  { slug: "ceiling-removal", title: "Ceiling Removal", short: "Suspended and plasterboard ceilings taken down safely.", img: "ceiling" },
-  { slug: "partition-wall-removal", title: "Partition Wall Removal", short: "Stud and metal partitions removed, waste bagged and cleared.", img: "ceiling" },
-  { slug: "floor-covering-removal", title: "Floor Covering Removal", short: "Carpet, laminate, vinyl and tile removal down to subfloor.", img: "kitchen" },
-  { slug: "garage-strip-out", title: "Garage Strip Out", short: "Full garage clearance and strip ready for conversion.", img: "retail" },
-  { slug: "office-strip-out", title: "Office Strip Out", short: "Boutique office cat-A / cat-B strip out and clearance.", img: "retail" },
-  { slug: "retail-strip-out", title: "Retail & Shop Strip Out", short: "Cafés, salons and independent shops stripped ready for refit.", img: "retail" },
-  { slug: "commercial-strip-out", title: "Commercial Strip Out", short: "Light commercial units cleared for the incoming trade.", img: "retail" },
-  { slug: "internal-strip-out", title: "Internal Strip Out", short: "Selective internal strip out — leave what stays, remove what goes.", img: "kitchen" },
-  { slug: "site-clearance", title: "Site Clearance", short: "Post-strip clearance and full waste removal in one visit.", img: "ceiling" },
-  { slug: "waste-removal", title: "Waste Removal", short: "Licensed waste removal with full duty-of-care paperwork.", img: "ceiling" },
-  { slug: "property-preparation", title: "Property Preparation", short: "Handover-ready properties for builders and refurbishment teams.", img: "bathroom" },
+  {
+    slug: "house-strip-out",
+    title: "House Strip Out",
+    short: "Full residential strip out for terraces, semis and detached homes.",
+    img: "house-strip-out",
+  },
+  {
+    slug: "flat-strip-out",
+    title: "Flat & Apartment Strip Out",
+    short: "Careful, low-noise strip out for flats and apartment blocks.",
+    img: "flat-strip-out",
+  },
+  {
+    slug: "kitchen-strip-out",
+    title: "Kitchen Strip Out",
+    short: "Units, worktops, tiles, appliances — removed and cleared.",
+    img: "kitchen-strip-out",
+  },
+  {
+    slug: "bathroom-strip-out",
+    title: "Bathroom Strip Out",
+    short: "Suites, tiles and pipework removed ready for the next fit-out.",
+    img: "bathroom-strip-out",
+  },
+  {
+    slug: "ceiling-removal",
+    title: "Ceiling Removal",
+    short: "Suspended and plasterboard ceilings taken down safely.",
+    img: "ceiling-removal",
+  },
+  {
+    slug: "partition-wall-removal",
+    title: "Partition Wall Removal",
+    short: "Stud and metal partitions removed, waste bagged and cleared.",
+    img: "partition-wall-removal",
+  },
+  {
+    slug: "floor-covering-removal",
+    title: "Floor Covering Removal",
+    short: "Carpet, laminate, vinyl and tile removal down to subfloor.",
+    img: "floor-covering-removal",
+  },
+  {
+    slug: "garage-strip-out",
+    title: "Garage Strip Out",
+    short: "Full garage clearance and strip ready for conversion.",
+    img: "garage-strip-out",
+  },
+  {
+    slug: "office-strip-out",
+    title: "Office Strip Out",
+    short: "Boutique office cat-A / cat-B strip out and clearance.",
+    img: "office-strip-out",
+  },
+  {
+    slug: "retail-strip-out",
+    title: "Retail & Shop Strip Out",
+    short: "Cafés, salons and independent shops stripped ready for refit.",
+    img: "retail-strip-out",
+  },
+  {
+    slug: "commercial-strip-out",
+    title: "Commercial Strip Out",
+    short: "Light commercial units cleared for the incoming trade.",
+    img: "commercial-strip-out",
+  },
+  {
+    slug: "internal-strip-out",
+    title: "Internal Strip Out",
+    short: "Selective internal strip out — leave what stays, remove what goes.",
+    img: "internal-strip-out",
+  },
+  {
+    slug: "site-clearance",
+    title: "Site Clearance",
+    short: "Post-strip clearance and full waste removal in one visit.",
+    img: "site-clearance",
+  },
+  {
+    slug: "waste-removal",
+    title: "Waste Removal",
+    short: "Licensed waste removal with full duty-of-care paperwork.",
+    img: "waste-removal",
+  },
+  {
+    slug: "property-preparation",
+    title: "Property Preparation",
+    short: "Handover-ready properties for builders and refurbishment teams.",
+    img: "property-preparation",
+  },
 ];
 
 export const AREAS = [

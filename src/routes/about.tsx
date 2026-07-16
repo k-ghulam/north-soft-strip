@@ -3,7 +3,8 @@ import { CheckCircle2, ArrowRight, Shield, Heart, Users, Award } from "lucide-re
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SITE } from "@/lib/site";
-import stageDuring from "@/assets/stage-during.jpg";
+
+const stageDuring = "/assets/partition-wall-removal.jpeg";
 
 export const Route = createFileRoute("/about")({
   component: About,

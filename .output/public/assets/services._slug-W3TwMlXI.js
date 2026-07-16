@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DGeXAQPT.js";import{t}from"./link-CGAuXtgO.js";var n=e(),r=()=>(0,n.jsxs)(`div`,{className:`pt-40 text-center`,children:[`Service not found. `,(0,n.jsx)(t,{to:`/services`,className:`text-orange`,children:`See all services`}),`.`]});export{r as notFoundComponent};

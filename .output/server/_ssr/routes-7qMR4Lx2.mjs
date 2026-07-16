@@ -1,0 +1,25 @@
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-7qMR4Lx2.js
+var faqs = [
+	{
+		q: "What is soft strip?",
+		a: "Soft strip is the careful removal of a building's non-structural interior — kitchens, bathrooms, ceilings, partitions, floor coverings, fixtures and fittings — leaving a clean shell ready for refurbishment."
+	},
+	{
+		q: "Do you cover the whole of Merseyside?",
+		a: "Yes. We work across Liverpool, Wirral, Bootle, Knowsley, Sefton, Southport, St Helens and the wider Merseyside area."
+	},
+	{
+		q: "Are you insured?",
+		a: "Fully. We carry public liability and employer's liability insurance, and we're licensed waste carriers with full duty-of-care paperwork."
+	},
+	{
+		q: "How quickly can you start?",
+		a: "For most jobs we can be on site within a few days. Emergency and rapid-turnaround requests are welcome — just call us."
+	},
+	{
+		q: "Do you clear the waste too?",
+		a: "Yes. Every quote includes site clearance and licensed waste removal by default. You get a clean, empty property back — no rubble left behind."
+	}
+];
+//#endregion
+export { faqs as t };

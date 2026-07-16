@@ -61,15 +61,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "North Soft Strip — Liverpool Soft Strip Contractors" },
       { name: "twitter:description", content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside." },
-      { property: "og:image", content: "/assets/hero-strip-out.jpg" },
-      { name: "twitter:image", content: "/assets/hero-strip-out.jpg" },
+      { property: "og:image", content: "/assets/house-strip-out.jpeg" },
+      { name: "twitter:image", content: "/assets/house-strip-out.jpeg" },
       { name: "google-site-verification", content: "xDga_rCMoS00bSrZnFbxNIO6ZQLUkwjNbrpozKz9V-o" },
     ],
     links: [
+      { rel: "preload", href: appCss, as: "style" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap" },
+      { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
+      { rel: "preload", as: "style", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap", media: "print", onLoad: "this.media='all'" as unknown as undefined },
+      { rel: "preload", as: "image", href: "/assets/house-strip-out.jpeg", fetchPriority: "high" as unknown as undefined },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [{
@@ -96,9 +100,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-GB">
-      <head><HeadContent /></head>
-      <body>{children}<Scripts /></body>
+    <html lang="en-GB" style={{ backgroundColor: "#0F2B46" }}>
+      <head>
+        {/* Critical inline styles to prevent FOUC/white flash */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          html,body{background:#0F2B46;margin:0;padding:0}
+          body{font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+          @keyframes _spin{to{transform:rotate(360deg)}}
+          ._loader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0F2B46;transition:opacity .3s ease .1s}
+          ._loader._done{opacity:0;pointer-events:none}
+          ._spinner{width:36px;height:36px;border:3px solid rgba(255,255,255,.15);border-top-color:#F28C28;border-radius:50%;animation:_spin .7s linear infinite;margin-top:1rem}
+        ` }} />
+        <HeadContent />
+      </head>
+      <body>
+        {/* Loading screen shown before React hydrates - removed by script below */}
+        <div id="_init-loader" className="_loader" aria-hidden="true">
+          <img src="/assets/logo.png" width={48} height={48} alt="" style={{ borderRadius: 8, opacity: 0.9 }} />
+          <div className="_spinner" />
+        </div>
+        {children}
+        <Scripts />
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            var el=document.getElementById('_init-loader');
+            if(!el)return;
+            // Remove loader once page has painted
+            function done(){el.classList.add('_done');setTimeout(function(){el.remove()},400);}
+            if(document.readyState==='complete'){done();}
+            else{window.addEventListener('load',done,{once:true});}
+          })();
+        ` }} />
+      </body>
     </html>
   );
 }

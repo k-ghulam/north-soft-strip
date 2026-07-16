@@ -3,7 +3,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { AREAS, SERVICES, SITE } from "@/lib/site";
 import { SectionHeader } from "@/components/SectionHeader";
 
-const defaultHero = "/assets/hero-strip-out.jpg";
+const defaultHero = "/assets/house-strip-out.jpeg";
 
 export const Route = createFileRoute("/areas/$slug")({
   component: Area,

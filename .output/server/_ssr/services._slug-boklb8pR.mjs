@@ -1,0 +1,199 @@
+import { i as SITE, r as SERVICES } from "./site-BPt2AzFt.mjs";
+import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
+import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
+import { t as SectionHeader } from "./SectionHeader-Bbi4m1_3.mjs";
+import { b as CircleCheck, d as MessageCircle, u as Phone, w as ArrowRight } from "../_libs/lucide-react.mjs";
+import { t as Route } from "./services._slug-oGC-6yos.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/services._slug-boklb8pR.js
+var import_jsx_runtime = require_jsx_runtime();
+var imgMap = {
+	"house-strip-out": "/assets/house-strip-out.jpeg",
+	"flat-strip-out": "/assets/flat-strip-out.jpeg",
+	"kitchen-strip-out": "/assets/kitchen-strip-out.jpeg",
+	"bathroom-strip-out": "/assets/bathroom-strip-out.jpeg",
+	"ceiling-removal": "/assets/ceiling-removal.jpeg",
+	"partition-wall-removal": "/assets/partition-wall-removal.jpeg",
+	"floor-covering-removal": "/assets/floor-covering-removal.jpeg",
+	"garage-strip-out": "/assets/garage-strip-out.jpeg",
+	"office-strip-out": "/assets/office-strip-out.jpeg",
+	"retail-strip-out": "/assets/commercial-strip-out.jpeg",
+	"commercial-strip-out": "/assets/commercial-strip-out.jpeg",
+	"internal-strip-out": "/assets/house-strip-out.jpeg",
+	"site-clearance": "/assets/site-clearance.jpeg",
+	"waste-removal": "/assets/waste-removal.jpeg",
+	"property-preparation": "/assets/property-preparation.jpeg"
+};
+var defaultHero = "/assets/house-strip-out.jpeg";
+var benefits = [
+	"Free written quote — no obligation",
+	"Fixed price, no hidden extras",
+	"Fully insured, PPE-equipped team",
+	"Waste removed with duty-of-care paperwork",
+	"Property left swept & handover-ready",
+	"Careful with neighbours and shared walls"
+];
+function ServiceDetail() {
+	const s = Route.useLoaderData();
+	const img = imgMap[s.img] || defaultHero;
+	const related = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+			className: "relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+					src: img,
+					alt: "",
+					width: 1920,
+					height: 1200,
+					className: "absolute inset-0 h-full w-full object-cover"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-navy/85" }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "container-x relative",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "eyebrow text-orange-soft",
+							children: "Soft Strip Service"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
+							className: "mt-3 text-4xl md:text-6xl font-extrabold text-white max-w-4xl leading-[1.05]",
+							children: [s.title, " in Liverpool & Merseyside"]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-5 text-lg text-white/85 max-w-2xl",
+							children: s.short
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mt-8 flex flex-wrap gap-3",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+									to: "/quote",
+									className: "btn-primary btn-primary-hover",
+									children: ["Get Free Quote ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "h-4 w-4" })]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: SITE.phoneHref,
+									className: "btn-outline hover:bg-white/10",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4" }),
+										" ",
+										SITE.phoneDisplay
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: SITE.whatsappHref,
+									target: "_blank",
+									rel: "noopener noreferrer",
+									className: "btn-outline hover:bg-white/10",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircle, { className: "h-4 w-4" }), " WhatsApp"]
+								})
+							]
+						})
+					]
+				})
+			]
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "py-20",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x grid gap-12 lg:grid-cols-[1.4fr_1fr]",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeader, {
+						eyebrow: "Overview",
+						title: `Our ${s.title.toLowerCase()} service`
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-6 space-y-4 text-muted-foreground leading-relaxed",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+							"Whether it's a single room or an entire property, our ",
+							s.title.toLowerCase(),
+							" service is designed for projects of all sizes across Liverpool and Merseyside. We survey, quote, strip, clear and hand back — one team from start to finish."
+						] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "We work in occupied and vacant properties, coordinate around your builder's programme, and always leave the site cleaner than we found it." })]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+						className: "mt-10 text-2xl font-bold",
+						children: "What's included"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+						className: "mt-4 grid sm:grid-cols-2 gap-2 text-sm",
+						children: benefits.map((b) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+							className: "flex items-start gap-2",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "h-4 w-4 text-orange mt-0.5 shrink-0" }),
+								" ",
+								b
+							]
+						}, b))
+					})
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
+					className: "card-lift p-7 h-fit lg:sticky lg:top-28",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "text-xl font-bold",
+							children: "Get a free quote today"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-2 text-sm text-muted-foreground",
+							children: "Send a couple of photos or ask a quick question — usually answered within the hour."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mt-5 flex flex-col gap-2.5",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									to: "/quote",
+									className: "btn-primary btn-primary-hover justify-center",
+									children: "Request a Quote"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: SITE.whatsappHref,
+									target: "_blank",
+									rel: "noopener noreferrer",
+									className: "btn-ghost-dark justify-center",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircle, { className: "h-4 w-4" }), " WhatsApp"]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: SITE.phoneHref,
+									className: "btn-ghost-dark justify-center",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4" }), " Call"]
+								})
+							]
+						})
+					]
+				})]
+			})
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "py-20 bg-mist",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeader, {
+					eyebrow: "Related Services",
+					title: "You might also need…"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-10 grid gap-6 md:grid-cols-3",
+					children: related.map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+						to: "/services/$slug",
+						params: { slug: r.slug },
+						className: "card-lift p-6 group hover:-translate-y-1 hover:shadow-lift",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "font-bold text-navy",
+								children: r.title
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-2 text-sm text-muted-foreground",
+								children: r.short
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "mt-4 inline-flex items-center gap-1 text-sm font-semibold text-orange",
+								children: ["Learn more ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "h-3.5 w-3.5" })]
+							})
+						]
+					}, r.slug))
+				})]
+			})
+		})
+	] });
+}
+//#endregion
+export { ServiceDetail as component };

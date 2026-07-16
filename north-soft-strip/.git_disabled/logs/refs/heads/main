@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 63577eec9f12aed002135d3e026871746c95b481 k-ghulam <gkushki80@gmail.com> 1783995910 +0300	commit (initial): Initial commit
+63577eec9f12aed002135d3e026871746c95b481 63577eec9f12aed002135d3e026871746c95b481 k-ghulam <gkushki80@gmail.com> 1783995970 +0300	Branch: renamed refs/heads/master to refs/heads/main
+63577eec9f12aed002135d3e026871746c95b481 cf00c9ca77765f5a2d2f316ceebb64cf1fcbac44 k-ghulam <gkushki80@gmail.com> 1784045632 +0300	commit: chore: migrate assets to public folder and clean up build directories

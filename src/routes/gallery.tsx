@@ -49,83 +49,83 @@ type Item = {
 
 const items: Item[] = [
   { 
-    src: "/assets/hero-strip-out.jpg", 
+    src: "/assets/house-strip-out.jpeg", 
     category: "Houses", 
     span: "lg:row-span-2 lg:col-span-2",
     alt: "North Soft Strip crew removing plasterboard ceiling in a Liverpool terraced house during soft strip",
     caption: "Terraced house soft strip · Wavertree, Liverpool" 
   },
   { 
-    src: "/assets/kitchen-cabinet-strip.jpg", 
+    src: "/assets/kitchen-strip-out.jpeg", 
     category: "Kitchens",
     alt: "Fitted kitchen units and worktops being carefully removed during a residential kitchen strip out in Merseyside",
     caption: "Kitchen strip out · Aigburth" 
   },
   { 
-    src: "/assets/bathroom-wall-scrape.jpg", 
+    src: "/assets/bathroom-strip-out.jpeg", 
     category: "Bathrooms",
     alt: "Bathroom suite, tiles and pipework stripped back to bare walls ready for a new fit-out",
     caption: "Bathroom strip out · Bootle flat" 
   },
   { 
-    src: "/assets/stage-during.jpg", 
+    src: "/assets/partition-wall-removal.jpeg", 
     category: "Flats", 
     span: "lg:col-span-2",
     alt: "Two-bed apartment mid-strip with dust sheeting, floor protection and bagged waste ready for removal",
     caption: "Apartment soft strip in progress · Liverpool waterfront" 
   },
   { 
-    src: "/assets/service-ceiling.jpg", 
+    src: "/assets/ceiling-removal.jpeg", 
     category: "Ceilings",
     alt: "Suspended ceiling tiles and grid being taken down safely in a light commercial unit",
     caption: "Suspended ceiling removal · St Helens" 
   },
   { 
-    src: "/assets/service-retail.jpg", 
+    src: "/assets/commercial-strip-out.jpeg", 
     category: "Shops",
     alt: "Independent shop unit stripped of shelving, counters and signage ready for the next tenant",
     caption: "Retail unit strip out · Liverpool city centre" 
   },
   { 
-    src: "/assets/stage-before.jpg", 
+    src: "/assets/flat-strip-out.jpeg", 
     category: "Garages",
     alt: "Cluttered garage interior photographed before a full strip out and clearance in Wirral",
     caption: "Garage · before works · Wirral" 
   },
   { 
-    src: "/assets/stage-completed.jpg", 
+    src: "/assets/property-preparation.jpeg", 
     category: "Completed", 
     span: "lg:col-span-2",
     alt: "Empty, swept and handover-ready property after completed soft strip and licensed waste removal",
     caption: "Handover-ready · completed project · Sefton" 
   },
   { 
-    src: "/assets/kitchen-before.jpg", 
+    src: "/assets/kitchen-strip-out.jpeg", 
     category: "Houses",
     alt: "Semi-detached family home interior mid soft strip with fixtures and fittings being removed",
     caption: "Semi-detached house strip · Knowsley" 
   },
   { 
-    src: "/assets/bathtub-removal.jpg", 
+    src: "/assets/bathroom-strip-out.jpeg", 
     category: "Bathrooms",
     alt: "Ensuite bathroom stripped to bare substrate with tiles and adhesive fully removed",
     caption: "Ensuite strip out · Southport" 
   },
   { 
-    src: "/assets/ceiling-board-removal.jpg", 
+    src: "/assets/ceiling-removal.jpeg", 
     category: "Ceilings",
     alt: "Plasterboard ceiling taken down carefully in a Liverpool ground-floor flat during soft strip",
     caption: "Plasterboard ceiling down · Liverpool" 
   },
   { 
-    src: "/assets/commercial-strip-out.jpg", 
+    src: "/assets/commercial-strip-out.jpeg", 
     category: "Shops",
     alt: "Café interior stripped of seating, counter and wall panelling ready for refurbishment",
     caption: "Café strip out · Bootle" 
   },
 ];
 
-const CATEGORIES: ("All" | Category[])[number][] = [
+const CATEGORIES: ("All" | Category)[] = [
   "All", "Houses", "Flats", "Garages", "Shops", "Kitchens", "Bathrooms", "Ceilings", "Completed",
 ];
 

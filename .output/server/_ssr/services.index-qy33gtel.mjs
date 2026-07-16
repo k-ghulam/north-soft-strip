@@ -1,0 +1,73 @@
+import { r as SERVICES } from "./site-BPt2AzFt.mjs";
+import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
+import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
+import { t as PageHero } from "./PageHero-BeiRelpw.mjs";
+import { w as ArrowRight } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/services.index-qy33gtel.js
+var import_jsx_runtime = require_jsx_runtime();
+var imgMap = {
+	"house-strip-out": "/assets/house-strip-out.jpeg",
+	"flat-strip-out": "/assets/flat-strip-out.jpeg",
+	"kitchen-strip-out": "/assets/kitchen-strip-out.jpeg",
+	"bathroom-strip-out": "/assets/bathroom-strip-out.jpeg",
+	"ceiling-removal": "/assets/ceiling-removal.jpeg",
+	"partition-wall-removal": "/assets/partition-wall-removal.jpeg",
+	"floor-covering-removal": "/assets/floor-covering-removal.jpeg",
+	"garage-strip-out": "/assets/garage-strip-out.jpeg",
+	"office-strip-out": "/assets/office-strip-out.jpeg",
+	"retail-strip-out": "/assets/commercial-strip-out.jpeg",
+	"commercial-strip-out": "/assets/commercial-strip-out.jpeg",
+	"internal-strip-out": "/assets/house-strip-out.jpeg",
+	"site-clearance": "/assets/site-clearance.jpeg",
+	"waste-removal": "/assets/waste-removal.jpeg",
+	"property-preparation": "/assets/property-preparation.jpeg"
+};
+function Services() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageHero, {
+		eyebrow: "Services",
+		title: "Everything we do.",
+		description: "Careful strip out, site clearance and property preparation for projects of all sizes across Merseyside."
+	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "py-20",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "container-x grid gap-6 md:grid-cols-2 lg:grid-cols-3",
+			children: SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+				to: "/services/$slug",
+				params: { slug: s.slug },
+				className: "group card-lift overflow-hidden hover:-translate-y-1 hover:shadow-lift",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "relative aspect-[4/3] overflow-hidden",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: imgMap[s.img],
+							alt: s.title,
+							loading: "lazy",
+							width: 1200,
+							height: 900,
+							className: "h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "absolute bottom-4 left-4 right-4 flex items-center justify-between",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "text-white text-lg font-bold",
+								children: s.title
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "h-9 w-9 rounded-full grid place-items-center bg-orange text-white group-hover:translate-x-1 transition-transform",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "h-4 w-4" })
+							})]
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "p-5",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-sm text-muted-foreground leading-relaxed",
+						children: s.short
+					})
+				})]
+			}, s.slug))
+		})
+	})] });
+}
+//#endregion
+export { Services as component };

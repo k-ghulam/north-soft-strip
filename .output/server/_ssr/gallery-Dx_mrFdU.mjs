@@ -1,0 +1,259 @@
+import { n as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { t as PageHero } from "./PageHero-BeiRelpw.mjs";
+import { S as ChevronLeft, n as X, t as ZoomIn, x as ChevronRight } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/gallery-Dx_mrFdU.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var items = [
+	{
+		src: "/assets/house-strip-out.jpeg",
+		category: "Houses",
+		span: "lg:row-span-2 lg:col-span-2",
+		alt: "North Soft Strip crew removing plasterboard ceiling in a Liverpool terraced house during soft strip",
+		caption: "Terraced house soft strip · Wavertree, Liverpool"
+	},
+	{
+		src: "/assets/kitchen-strip-out.jpeg",
+		category: "Kitchens",
+		alt: "Fitted kitchen units and worktops being carefully removed during a residential kitchen strip out in Merseyside",
+		caption: "Kitchen strip out · Aigburth"
+	},
+	{
+		src: "/assets/bathroom-strip-out.jpeg",
+		category: "Bathrooms",
+		alt: "Bathroom suite, tiles and pipework stripped back to bare walls ready for a new fit-out",
+		caption: "Bathroom strip out · Bootle flat"
+	},
+	{
+		src: "/assets/partition-wall-removal.jpeg",
+		category: "Flats",
+		span: "lg:col-span-2",
+		alt: "Two-bed apartment mid-strip with dust sheeting, floor protection and bagged waste ready for removal",
+		caption: "Apartment soft strip in progress · Liverpool waterfront"
+	},
+	{
+		src: "/assets/ceiling-removal.jpeg",
+		category: "Ceilings",
+		alt: "Suspended ceiling tiles and grid being taken down safely in a light commercial unit",
+		caption: "Suspended ceiling removal · St Helens"
+	},
+	{
+		src: "/assets/commercial-strip-out.jpeg",
+		category: "Shops",
+		alt: "Independent shop unit stripped of shelving, counters and signage ready for the next tenant",
+		caption: "Retail unit strip out · Liverpool city centre"
+	},
+	{
+		src: "/assets/flat-strip-out.jpeg",
+		category: "Garages",
+		alt: "Cluttered garage interior photographed before a full strip out and clearance in Wirral",
+		caption: "Garage · before works · Wirral"
+	},
+	{
+		src: "/assets/property-preparation.jpeg",
+		category: "Completed",
+		span: "lg:col-span-2",
+		alt: "Empty, swept and handover-ready property after completed soft strip and licensed waste removal",
+		caption: "Handover-ready · completed project · Sefton"
+	},
+	{
+		src: "/assets/kitchen-strip-out.jpeg",
+		category: "Houses",
+		alt: "Semi-detached family home interior mid soft strip with fixtures and fittings being removed",
+		caption: "Semi-detached house strip · Knowsley"
+	},
+	{
+		src: "/assets/bathroom-strip-out.jpeg",
+		category: "Bathrooms",
+		alt: "Ensuite bathroom stripped to bare substrate with tiles and adhesive fully removed",
+		caption: "Ensuite strip out · Southport"
+	},
+	{
+		src: "/assets/ceiling-removal.jpeg",
+		category: "Ceilings",
+		alt: "Plasterboard ceiling taken down carefully in a Liverpool ground-floor flat during soft strip",
+		caption: "Plasterboard ceiling down · Liverpool"
+	},
+	{
+		src: "/assets/commercial-strip-out.jpeg",
+		category: "Shops",
+		alt: "Café interior stripped of seating, counter and wall panelling ready for refurbishment",
+		caption: "Café strip out · Bootle"
+	}
+];
+var CATEGORIES = [
+	"All",
+	"Houses",
+	"Flats",
+	"Garages",
+	"Shops",
+	"Kitchens",
+	"Bathrooms",
+	"Ceilings",
+	"Completed"
+];
+function Gallery() {
+	const [active, setActive] = (0, import_react.useState)("All");
+	const [openIdx, setOpenIdx] = (0, import_react.useState)(null);
+	const filtered = (0, import_react.useMemo)(() => active === "All" ? items : items.filter((i) => i.category === active), [active]);
+	const close = (0, import_react.useCallback)(() => setOpenIdx(null), []);
+	const next = (0, import_react.useCallback)(() => setOpenIdx((i) => i === null ? i : (i + 1) % filtered.length), [filtered.length]);
+	const prev = (0, import_react.useCallback)(() => setOpenIdx((i) => i === null ? i : (i - 1 + filtered.length) % filtered.length), [filtered.length]);
+	(0, import_react.useEffect)(() => {
+		if (openIdx === null) return;
+		const onKey = (e) => {
+			if (e.key === "Escape") close();
+			else if (e.key === "ArrowRight") next();
+			else if (e.key === "ArrowLeft") prev();
+		};
+		document.body.style.overflow = "hidden";
+		window.addEventListener("keydown", onKey);
+		return () => {
+			document.body.style.overflow = "";
+			window.removeEventListener("keydown", onKey);
+		};
+	}, [
+		openIdx,
+		close,
+		next,
+		prev
+	]);
+	(0, import_react.useEffect)(() => {
+		if (openIdx === null) return;
+		[1, -1].forEach((d) => {
+			const idx = (openIdx + d + filtered.length) % filtered.length;
+			const img = new Image();
+			img.src = filtered[idx].src;
+		});
+	}, [openIdx, filtered]);
+	const current = openIdx !== null ? filtered[openIdx] : null;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageHero, {
+			eyebrow: "Gallery",
+			title: "Real jobs, real progress.",
+			description: "Every image below is from a project we've completed across Liverpool and Merseyside — filter by property type or work stage."
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "py-16",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "flex flex-wrap gap-2 mb-8",
+					role: "tablist",
+					"aria-label": "Filter gallery by category",
+					children: CATEGORIES.map((c) => {
+						const isActive = c === active;
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							role: "tab",
+							"aria-selected": isActive,
+							onClick: () => setActive(c),
+							className: `px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive ? "bg-navy text-white shadow-md" : "bg-mist text-navy hover:bg-border"}`,
+							children: c
+						}, c);
+					})
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "grid gap-3 grid-cols-2 lg:grid-cols-4 auto-rows-55",
+					children: filtered.map((it, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						onClick: () => setOpenIdx(i),
+						"aria-label": `Open image: ${it.caption}`,
+						className: `relative overflow-hidden rounded-2xl group focus:outline-none focus-visible:ring-2 focus-visible:ring-orange ${it.span ?? ""}`,
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: it.src,
+								alt: it.alt,
+								width: 1200,
+								height: 900,
+								loading: "lazy",
+								decoding: "async",
+								className: "h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "absolute inset-x-3 bottom-3 flex items-end justify-between opacity-0 group-hover:opacity-100 transition-opacity",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-left text-white text-sm font-semibold drop-shadow max-w-[70%]",
+									children: it.caption
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "h-9 w-9 rounded-full bg-orange text-white grid place-items-center shrink-0",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ZoomIn, { className: "h-4 w-4" })
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "absolute top-3 left-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold text-navy",
+								children: it.category
+							})
+						]
+					}, `${it.src}-${i}`))
+				})]
+			})
+		}),
+		current && openIdx !== null && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			role: "dialog",
+			"aria-modal": "true",
+			"aria-label": current.caption,
+			className: "fixed inset-0 z-50 bg-navy-deep/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-up",
+			onClick: close,
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					type: "button",
+					onClick: close,
+					"aria-label": "Close gallery",
+					className: "absolute top-4 right-4 h-11 w-11 grid place-items-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-5 w-5" })
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					type: "button",
+					onClick: (e) => {
+						e.stopPropagation();
+						prev();
+					},
+					"aria-label": "Previous image",
+					className: "absolute left-3 md:left-6 top-1/2 -translate-y-1/2 h-12 w-12 grid place-items-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronLeft, { className: "h-6 w-6" })
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					type: "button",
+					onClick: (e) => {
+						e.stopPropagation();
+						next();
+					},
+					"aria-label": "Next image",
+					className: "absolute right-3 md:right-6 top-1/2 -translate-y-1/2 h-12 w-12 grid place-items-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { className: "h-6 w-6" })
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figure", {
+					className: "max-w-6xl w-full flex flex-col items-center",
+					onClick: (e) => e.stopPropagation(),
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: current.src,
+						alt: current.alt,
+						width: 1600,
+						height: 1200,
+						className: "max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl animate-fade-up",
+						decoding: "async"
+					}, current.src + openIdx), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figcaption", {
+						className: "mt-4 text-center text-white/90",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "text-base font-semibold",
+							children: current.caption
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "text-xs text-white/85 mt-1",
+							children: [
+								current.category,
+								" · ",
+								openIdx + 1,
+								" / ",
+								filtered.length
+							]
+						})]
+					})]
+				})
+			]
+		})
+	] });
+}
+//#endregion
+export { Gallery as component };

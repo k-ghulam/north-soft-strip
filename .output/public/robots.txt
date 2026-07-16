@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://strip-and-prep-pro.lovable.app/sitemap.xml

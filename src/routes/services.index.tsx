@@ -4,11 +4,22 @@ import { PageHero } from "@/components/PageHero";
 import { SERVICES } from "@/lib/site";
 
 // Replace imports with direct static string paths
-const imgMap: Record<string, string> = { 
-  kitchen: "/assets/service-kitchen.jpg", 
-  bathroom: "/assets/service-bathroom.jpg", 
-  ceiling: "/assets/service-ceiling.jpg", 
-  retail: "/assets/service-retail.jpg" 
+const imgMap: Record<string, string> = {
+  "house-strip-out": "/assets/house-strip-out.jpeg",
+  "flat-strip-out": "/assets/flat-strip-out.jpeg",
+  "kitchen-strip-out": "/assets/kitchen-strip-out.jpeg",
+  "bathroom-strip-out": "/assets/bathroom-strip-out.jpeg",
+  "ceiling-removal": "/assets/ceiling-removal.jpeg",
+  "partition-wall-removal": "/assets/partition-wall-removal.jpeg",
+  "floor-covering-removal": "/assets/floor-covering-removal.jpeg",
+  "garage-strip-out": "/assets/garage-strip-out.jpeg",
+  "office-strip-out": "/assets/office-strip-out.jpeg",
+  "retail-strip-out": "/assets/commercial-strip-out.jpeg",
+  "commercial-strip-out": "/assets/commercial-strip-out.jpeg",
+  "internal-strip-out": "/assets/house-strip-out.jpeg",
+  "site-clearance": "/assets/site-clearance.jpeg",
+  "waste-removal": "/assets/waste-removal.jpeg",
+  "property-preparation": "/assets/property-preparation.jpeg",
 };
 
 export const Route = createFileRoute("/services/")({

@@ -42,10 +42,21 @@ export const Route = createFileRoute("/")({
 
 // Clean and reliable path mapping using standard relative paths
 const imgMap: Record<string, string> = {
-  kitchen: "/assets/service-kitchen.jpg",
-  bathroom: "/assets/service-bathroom.jpg",
-  ceiling: "/assets/service-ceiling.jpg",
-  retail: "/assets/service-retail.jpg",
+  "house-strip-out": "/assets/house-strip-out.jpeg",
+  "flat-strip-out": "/assets/flat-strip-out.jpeg",
+  "kitchen-strip-out": "/assets/kitchen-strip-out.jpeg",
+  "bathroom-strip-out": "/assets/bathroom-strip-out.jpeg",
+  "ceiling-removal": "/assets/ceiling-removal.jpeg",
+  "partition-wall-removal": "/assets/partition-wall-removal.jpeg",
+  "floor-covering-removal": "/assets/floor-covering-removal.jpeg",
+  "garage-strip-out": "/assets/garage-strip-out.jpeg",
+  "office-strip-out": "/assets/office-strip-out.jpeg",
+  "retail-strip-out": "/assets/commercial-strip-out.jpeg",
+  "commercial-strip-out": "/assets/commercial-strip-out.jpeg",
+  "internal-strip-out": "/assets/house-strip-out.jpeg",
+  "site-clearance": "/assets/site-clearance.jpeg",
+  "waste-removal": "/assets/waste-removal.jpeg",
+  "property-preparation": "/assets/property-preparation.jpeg",
 };
 
 const trustBadges = [
@@ -133,9 +144,9 @@ function Index() {
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
-              { img: "/assets/stage-before.jpg", tag: "01 · Before", title: "We survey the property", body: "Free on-site walk-through, transparent scope and a fixed quote. No hidden extras." },
-              { img: "/assets/stage-during.jpg", tag: "02 · During", title: "We strip it out", body: "Fixtures, fittings, kitchens, bathrooms, ceilings, partitions and floor coverings — carefully removed, room by room." },
-              { img: "/assets/stage-completed.jpg", tag: "03 · Completed", title: "We hand it back clean", body: "Waste removed, floors swept, ready for your builder. A blank canvas — not a building site." },
+              { img: "/assets/flat-strip-out.jpeg", tag: "01 · Before", title: "We survey the property", body: "Free on-site walk-through, transparent scope and a fixed quote. No hidden extras." },
+              { img: "/assets/partition-wall-removal.jpeg", tag: "02 · During", title: "We strip it out", body: "Fixtures, fittings, kitchens, bathrooms, ceilings, partitions and floor coverings — carefully removed, room by room." },
+              { img: "/assets/property-preparation.jpeg", tag: "03 · Completed", title: "We hand it back clean", body: "Waste removed, floors swept, ready for your builder. A blank canvas — not a building site." },
             ].map((step) => (
               <div key={step.tag} className="card-lift overflow-hidden">
                 <div className="relative aspect-[4/3]">

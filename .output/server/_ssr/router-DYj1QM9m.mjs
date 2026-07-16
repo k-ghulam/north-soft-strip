@@ -1,0 +1,1166 @@
+import { n as __toESM } from "../_runtime.mjs";
+import { i as SITE, r as SERVICES, t as AREAS } from "./site-BPt2AzFt.mjs";
+import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
+import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { d as MessageCircle, f as Menu, m as Mail, n as X, p as MapPin, u as Phone, v as FileText, y as Clock } from "../_libs/lucide-react.mjs";
+import { t as Route$13 } from "./areas._slug-CUGPZVHU.mjs";
+import { t as faqs } from "./faq-CSiwh7F6.mjs";
+import { t as Route$14 } from "./liverpool._slug-DfS0Jycn.mjs";
+import { t as faqs$1 } from "./routes-7qMR4Lx2.mjs";
+import { t as Route$15 } from "./services._slug-oGC-6yos.mjs";
+import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DYj1QM9m.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var styles_default = "/assets/styles-DKxmYBds.css";
+function reportLovableError(error, context = {}) {
+	if (typeof window === "undefined") return;
+	window.__lovableEvents?.captureException?.(error, {
+		source: "react_error_boundary",
+		route: window.location.pathname,
+		...context
+	}, {
+		mechanism: "react_error_boundary",
+		handled: false,
+		severity: "error"
+	});
+}
+var logo$1 = "/assets/logo.png";
+var nav = [
+	{
+		to: "/",
+		label: "Home"
+	},
+	{
+		to: "/about",
+		label: "About"
+	},
+	{
+		to: "/services",
+		label: "Services"
+	},
+	{
+		to: "/projects",
+		label: "Projects"
+	},
+	{
+		to: "/gallery",
+		label: "Gallery"
+	},
+	{
+		to: "/areas",
+		label: "Areas"
+	},
+	{
+		to: "/faq",
+		label: "FAQ"
+	},
+	{
+		to: "/contact",
+		label: "Contact"
+	}
+];
+function SiteHeader() {
+	const [scrolled, setScrolled] = (0, import_react.useState)(false);
+	const [open, setOpen] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		const onScroll = () => setScrolled(window.scrollY > 20);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+		className: `fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_6px_24px_-12px_rgba(15,43,70,0.25)]" : "bg-transparent"}`,
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x flex h-18 items-center justify-between py-3",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+					to: "/",
+					className: "flex items-center gap-2.5 shrink-0",
+					onClick: () => setOpen(false),
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: logo$1,
+						alt: "North Soft Strip logo",
+						width: 40,
+						height: 40,
+						className: "h-10 w-10"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: `font-display font-extrabold text-lg leading-tight tracking-tight ${scrolled ? "text-navy" : "text-white"}`,
+						children: "North Soft Strip"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+					className: "hidden lg:flex items-center gap-1",
+					children: nav.map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: n.to,
+						activeOptions: { exact: n.to === "/" },
+						className: `px-3 py-2 rounded-full text-sm font-semibold transition-colors ${scrolled ? "text-navy hover:text-orange" : "text-white hover:text-orange-soft"}`,
+						activeProps: { className: "text-orange" },
+						children: n.label
+					}, n.to))
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "hidden md:flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: SITE.phoneHref,
+						className: `hidden xl:inline-flex items-center gap-2 text-sm font-semibold ${scrolled ? "text-navy" : "text-white"}`,
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4" }),
+							" ",
+							SITE.phoneDisplay
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: "/quote",
+						className: "btn-primary btn-primary-hover",
+						children: "Get Free Quote"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					"aria-label": "Toggle menu",
+					onClick: () => setOpen((o) => !o),
+					className: `lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border ${scrolled ? "border-border text-navy" : "border-white/70 text-white"}`,
+					children: open ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-5 w-5" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, { className: "h-5 w-5" })
+				})
+			]
+		}), open && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "lg:hidden bg-white border-t border-border shadow-lg",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x py-4 flex flex-col gap-1",
+				children: [nav.map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+					to: n.to,
+					onClick: () => setOpen(false),
+					activeOptions: { exact: n.to === "/" },
+					className: "px-3 py-3 rounded-lg text-base font-semibold text-navy hover:bg-mist",
+					activeProps: { className: "text-orange" },
+					children: n.label
+				}, n.to)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+					to: "/quote",
+					onClick: () => setOpen(false),
+					className: "btn-primary btn-primary-hover mt-3",
+					children: "Get Free Quote"
+				})]
+			})
+		})]
+	});
+}
+var logo = "/assets/logo.png";
+function SiteFooter() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
+		className: "bg-navy text-white/90",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-2.5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: logo,
+							alt: "",
+							width: 40,
+							height: 40,
+							className: "h-10 w-10 bg-white rounded-lg p-1"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "font-display font-extrabold text-xl",
+							children: "North Soft Strip"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-4 text-sm text-white/85 leading-relaxed",
+						children: "Professional soft strip contractors for residential and light commercial projects across Liverpool and Merseyside."
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-6 space-y-2.5 text-sm",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: SITE.phoneHref,
+								className: "flex items-center gap-2.5 hover:text-orange-soft",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4 text-orange" }),
+									" ",
+									SITE.phoneDisplay
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: `mailto:${SITE.email}`,
+								className: "flex items-center gap-2.5 hover:text-orange-soft",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "h-4 w-4 text-orange" }),
+									" ",
+									SITE.email
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+								className: "flex items-center gap-2.5",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "h-4 w-4 text-orange" }), " Liverpool, Merseyside"]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+								className: "flex items-center gap-2.5",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "h-4 w-4 text-orange" }),
+									" ",
+									SITE.hours
+								]
+							})
+						]
+					})
+				] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+					className: "font-display font-bold text-white text-sm uppercase tracking-wider",
+					children: "Services"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+					className: "mt-4 space-y-2 text-sm text-white/85",
+					children: SERVICES.slice(0, 8).map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: "/services/$slug",
+						params: { slug: s.slug },
+						className: "hover:text-orange-soft",
+						children: s.title
+					}) }, s.slug))
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+					className: "font-display font-bold text-white text-sm uppercase tracking-wider",
+					children: "Areas Covered"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+					className: "mt-4 space-y-2 text-sm text-white/85",
+					children: AREAS.map((a) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+						to: "/areas/$slug",
+						params: { slug: a.slug },
+						className: "hover:text-orange-soft",
+						children: ["Soft Strip ", a.name]
+					}) }, a.slug))
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+					className: "font-display font-bold text-white text-sm uppercase tracking-wider",
+					children: "Company"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+					className: "mt-4 space-y-2 text-sm text-white/85",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/about",
+							className: "hover:text-orange-soft",
+							children: "About Us"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/projects",
+							className: "hover:text-orange-soft",
+							children: "Projects"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/gallery",
+							className: "hover:text-orange-soft",
+							children: "Gallery"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/faq",
+							className: "hover:text-orange-soft",
+							children: "FAQ"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/contact",
+							className: "hover:text-orange-soft",
+							children: "Contact"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/quote",
+							className: "hover:text-orange-soft",
+							children: "Request a Quote"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/privacy",
+							className: "hover:text-orange-soft",
+							children: "Privacy Policy"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/terms",
+							className: "hover:text-orange-soft",
+							children: "Terms & Conditions"
+						}) })
+					]
+				})] })
+			]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "border-t border-white/10",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-white/85",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+					"© ",
+					(/* @__PURE__ */ new Date()).getFullYear(),
+					" North Soft Strip. All rights reserved."
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Fully insured · Licensed waste carrier · Liverpool based" })]
+			})
+		})]
+	});
+}
+function FloatingActions() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "fixed right-4 bottom-6 z-40 hidden md:flex flex-col gap-3",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+				href: SITE.whatsappHref,
+				target: "_blank",
+				rel: "noopener noreferrer",
+				"aria-label": "WhatsApp us",
+				className: "h-14 w-14 rounded-full grid place-items-center text-white shadow-lift animate-pulse-ring",
+				style: { background: "var(--whatsapp)" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircle, { className: "h-6 w-6" })
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+				href: SITE.phoneHref,
+				"aria-label": "Call now",
+				className: "h-14 w-14 rounded-full grid place-items-center text-white shadow-lift",
+				style: { background: "var(--navy)" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-6 w-6" })
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+				to: "/quote",
+				"aria-label": "Get a free quote",
+				className: "h-14 w-14 rounded-full grid place-items-center text-white shadow-lift",
+				style: { background: "var(--orange)" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "h-6 w-6" })
+			})
+		]
+	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "fixed inset-x-0 bottom-0 z-40 md:hidden bg-white border-t border-border shadow-[0_-8px_24px_-12px_rgba(15,43,70,0.2)]",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "grid grid-cols-3",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: SITE.phoneHref,
+					className: "flex flex-col items-center justify-center gap-1 py-3 text-navy font-semibold text-xs",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-5 w-5" }), " Call"]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: SITE.whatsappHref,
+					target: "_blank",
+					rel: "noopener noreferrer",
+					className: "flex flex-col items-center justify-center gap-1 py-3 text-white font-semibold text-xs",
+					style: { background: "var(--whatsapp)" },
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircle, { className: "h-5 w-5" }), " WhatsApp"]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+					to: "/quote",
+					className: "flex flex-col items-center justify-center gap-1 py-3 text-white font-semibold text-xs",
+					style: { background: "var(--orange)" },
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "h-5 w-5" }), " Quote"]
+				})
+			]
+		})
+	})] });
+}
+var KEY = "nss_popup_dismissed_at";
+var SEVEN_DAYS = 10080 * 60 * 1e3;
+function QuotePopup() {
+	const [open, setOpen] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		let t;
+		try {
+			const last = Number(localStorage.getItem(KEY) || 0);
+			if (Date.now() - last > SEVEN_DAYS) t = window.setTimeout(() => setOpen(true), 8e3);
+		} catch {}
+		return () => {
+			if (t) clearTimeout(t);
+		};
+	}, []);
+	const close = () => {
+		setOpen(false);
+		try {
+			localStorage.setItem(KEY, String(Date.now()));
+		} catch {}
+	};
+	if (!open) return null;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "fixed inset-0 z-[60] grid place-items-center bg-navy-deep/60 backdrop-blur-sm p-4 animate-fade-up",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "relative max-w-md w-full bg-white rounded-3xl overflow-hidden shadow-lift",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				onClick: close,
+				"aria-label": "Close",
+				className: "absolute right-3 top-3 h-9 w-9 grid place-items-center rounded-full bg-mist text-navy hover:bg-border",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-4 w-4" })
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "p-8 pt-10 text-center",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "eyebrow justify-center",
+						children: "Free Quote"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+						className: "mt-3 text-2xl font-extrabold",
+						children: "Need a Soft Strip Contractor?"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-2 text-muted-foreground text-sm",
+						children: "Get your FREE, no-obligation quote today. Fast response — usually within the hour."
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-6 flex flex-col gap-2.5",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: SITE.phoneHref,
+								className: "btn-primary btn-primary-hover justify-center",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4" }),
+									" Call ",
+									SITE.phoneDisplay
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: SITE.whatsappHref,
+								target: "_blank",
+								rel: "noopener noreferrer",
+								className: "inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full font-semibold text-white",
+								style: { background: "var(--whatsapp)" },
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircle, { className: "h-4 w-4" }), " WhatsApp Us"]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+								to: "/quote",
+								onClick: close,
+								className: "btn-ghost-dark",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "h-4 w-4" }), " Request a Free Quote"]
+							})
+						]
+					})
+				]
+			})]
+		})
+	});
+}
+function NotFoundComponent() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex min-h-screen items-center justify-center bg-background px-4 pt-24",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+					className: "text-7xl font-extrabold text-navy",
+					children: "404"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "mt-4 text-xl font-bold",
+					children: "Page not found"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-2 text-sm text-muted-foreground",
+					children: "The page you're looking for doesn't exist or has moved."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+					href: "/",
+					className: "mt-6 btn-primary btn-primary-hover inline-flex",
+					children: "Go home"
+				})
+			]
+		})
+	});
+}
+function ErrorComponent({ error, reset }) {
+	console.error(error);
+	const router = useRouter();
+	(0, import_react.useEffect)(() => {
+		reportLovableError(error, { boundary: "tanstack_root_error_component" });
+	}, [error]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex min-h-screen items-center justify-center bg-background px-4 pt-24",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+					className: "text-xl font-bold",
+					children: "This page didn't load"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-2 text-sm text-muted-foreground",
+					children: "Something went wrong. Try again or head home."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-6 flex justify-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => {
+							router.invalidate();
+							reset();
+						},
+						className: "btn-primary btn-primary-hover",
+						children: "Try again"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "/",
+						className: "btn-ghost-dark",
+						children: "Home"
+					})]
+				})
+			]
+		})
+	});
+}
+var Route$12 = createRootRouteWithContext()({
+	head: () => ({
+		meta: [
+			{ charSet: "utf-8" },
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			{ title: "North Soft Strip — Liverpool Soft Strip Contractors" },
+			{
+				name: "description",
+				content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside."
+			},
+			{
+				name: "theme-color",
+				content: "#0F2B46"
+			},
+			{
+				property: "og:site_name",
+				content: "North Soft Strip"
+			},
+			{
+				property: "og:title",
+				content: "North Soft Strip — Liverpool Soft Strip Contractors"
+			},
+			{
+				property: "og:description",
+				content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside."
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				name: "twitter:card",
+				content: "summary_large_image"
+			},
+			{
+				name: "twitter:title",
+				content: "North Soft Strip — Liverpool Soft Strip Contractors"
+			},
+			{
+				name: "twitter:description",
+				content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside."
+			},
+			{
+				property: "og:image",
+				content: "/assets/house-strip-out.jpeg"
+			},
+			{
+				name: "twitter:image",
+				content: "/assets/house-strip-out.jpeg"
+			},
+			{
+				name: "google-site-verification",
+				content: "xDga_rCMoS00bSrZnFbxNIO6ZQLUkwjNbrpozKz9V-o"
+			}
+		],
+		links: [
+			{
+				rel: "preload",
+				href: styles_default,
+				as: "style"
+			},
+			{
+				rel: "stylesheet",
+				href: styles_default
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "anonymous"
+			},
+			{
+				rel: "dns-prefetch",
+				href: "https://fonts.googleapis.com"
+			},
+			{
+				rel: "preload",
+				as: "style",
+				href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap"
+			},
+			{
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap",
+				media: "print",
+				onLoad: "this.media='all'"
+			},
+			{
+				rel: "preload",
+				as: "image",
+				href: "/assets/house-strip-out.jpeg",
+				fetchPriority: "high"
+			},
+			{
+				rel: "icon",
+				href: "/favicon.ico",
+				type: "image/x-icon"
+			}
+		],
+		scripts: [{
+			type: "application/ld+json",
+			children: JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				name: "North Soft Strip",
+				image: "https://northsoftstrip.co.uk/logo.png",
+				telephone: "+44 7340 000583",
+				email: "info@northsoftstrip.co.uk",
+				priceRange: "££",
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: "Liverpool",
+					addressRegion: "Merseyside",
+					addressCountry: "GB"
+				},
+				areaServed: [
+					"Liverpool",
+					"Wirral",
+					"Bootle",
+					"Knowsley",
+					"Sefton",
+					"Southport",
+					"St Helens",
+					"Merseyside"
+				],
+				description: "Soft strip contractors for residential and light commercial projects across Liverpool and Merseyside."
+			})
+		}]
+	}),
+	shellComponent: RootShell,
+	component: RootComponent,
+	notFoundComponent: NotFoundComponent,
+	errorComponent: ErrorComponent
+});
+function RootShell({ children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
+		lang: "en-GB",
+		style: { backgroundColor: "#0F2B46" },
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { dangerouslySetInnerHTML: { __html: `
+          html,body{background:#0F2B46;margin:0;padding:0}
+          body{font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+          @keyframes _spin{to{transform:rotate(360deg)}}
+          ._loader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0F2B46;transition:opacity .3s ease .1s}
+          ._loader._done{opacity:0;pointer-events:none}
+          ._spinner{width:36px;height:36px;border:3px solid rgba(255,255,255,.15);border-top-color:#F28C28;border-radius:50%;animation:_spin .7s linear infinite;margin-top:1rem}
+        ` } }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				id: "_init-loader",
+				className: "_loader",
+				"aria-hidden": "true",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+					src: "/assets/logo.png",
+					width: 48,
+					height: 48,
+					alt: "",
+					style: {
+						borderRadius: 8,
+						opacity: .9
+					}
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "_spinner" })]
+			}),
+			children,
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", { dangerouslySetInnerHTML: { __html: `
+          (function(){
+            var el=document.getElementById('_init-loader');
+            if(!el)return;
+            // Remove loader once page has painted
+            function done(){el.classList.add('_done');setTimeout(function(){el.remove()},400);}
+            if(document.readyState==='complete'){done();}
+            else{window.addEventListener('load',done,{once:true});}
+          })();
+        ` } })
+		] })]
+	});
+}
+function RootComponent() {
+	const { queryClient } = Route$12.useRouteContext();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QueryClientProvider, {
+		client: queryClient,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteHeader, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
+				className: "pb-20 md:pb-0",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteFooter, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FloatingActions, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(QuotePopup, {})
+		]
+	});
+}
+var $$splitComponentImporter$10 = () => import("./terms-D8xisNwo.mjs");
+var Route$11 = createFileRoute("/terms")({
+	component: lazyRouteComponent($$splitComponentImporter$10, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Terms & Conditions — North Soft Strip" },
+			{
+				name: "description",
+				content: "Terms and conditions for North Soft Strip services."
+			},
+			{
+				property: "og:url",
+				content: "/terms"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/terms"
+		}]
+	})
+});
+var BASE_URL = "https://strip-and-prep-pro.lovable.app";
+var LIVERPOOL_SLUGS = [
+	"house-strip-out-liverpool",
+	"garage-strip-out-liverpool",
+	"kitchen-strip-out-liverpool",
+	"bathroom-strip-out-liverpool",
+	"commercial-strip-out-liverpool",
+	"property-preparation-liverpool",
+	"site-clearance-liverpool"
+];
+var Route$10 = createFileRoute("/sitemap.xml")({ server: { handlers: { GET: async () => {
+	const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[
+		"/",
+		"/about",
+		"/services",
+		"/projects",
+		"/gallery",
+		"/areas",
+		"/faq",
+		"/contact",
+		"/quote",
+		"/privacy",
+		"/terms",
+		...SERVICES.map((s) => `/services/${s.slug}`),
+		...AREAS.map((a) => `/areas/${a.slug}`),
+		...LIVERPOOL_SLUGS.map((s) => `/liverpool/${s}`)
+	].map((p) => `  <url><loc>${BASE_URL}${p}</loc><changefreq>weekly</changefreq></url>`).join("\n")}\n</urlset>`;
+	return new Response(xml, { headers: {
+		"Content-Type": "application/xml",
+		"Cache-Control": "public, max-age=3600"
+	} });
+} } } });
+var $$splitComponentImporter$9 = () => import("./quote-Cgw2P4Pm.mjs");
+var Route$9 = createFileRoute("/quote")({
+	component: lazyRouteComponent($$splitComponentImporter$9, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Request a Free Quote — North Soft Strip Liverpool" },
+			{
+				name: "description",
+				content: "Get a free, no-obligation soft strip quote in Liverpool and Merseyside. Upload photos, tell us about your project — usually answered within the hour."
+			},
+			{
+				property: "og:title",
+				content: "Free Soft Strip Quote — Liverpool"
+			},
+			{
+				property: "og:description",
+				content: "Same-day free quotes for soft strip and clearance across Merseyside."
+			},
+			{
+				property: "og:url",
+				content: "/quote"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/quote"
+		}]
+	})
+});
+var $$splitComponentImporter$8 = () => import("./projects-BIvT3G92.mjs");
+var Route$8 = createFileRoute("/projects")({
+	component: lazyRouteComponent($$splitComponentImporter$8, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Projects — Recent Soft Strip Work in Liverpool | North Soft Strip" },
+			{
+				name: "description",
+				content: "Recent soft strip and clearance projects across Liverpool and Merseyside — houses, flats, cafés and light commercial units. Before, during and completed."
+			},
+			{
+				property: "og:title",
+				content: "Our Recent Soft Strip Projects"
+			},
+			{
+				property: "og:description",
+				content: "Real projects across Merseyside — homes, flats and light commercial units stripped and handed back clean."
+			},
+			{
+				property: "og:url",
+				content: "/projects"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/projects"
+		}]
+	})
+});
+var $$splitComponentImporter$7 = () => import("./privacy-BNnHiT3L.mjs");
+var Route$7 = createFileRoute("/privacy")({
+	component: lazyRouteComponent($$splitComponentImporter$7, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Privacy Policy — North Soft Strip" },
+			{
+				name: "description",
+				content: "How North Soft Strip collects, uses and protects the personal information you share when requesting a soft strip quote in Liverpool or Merseyside."
+			},
+			{
+				property: "og:url",
+				content: "/privacy"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/privacy"
+		}]
+	})
+});
+var $$splitComponentImporter$6 = () => import("./gallery-Dx_mrFdU.mjs");
+var Route$6 = createFileRoute("/gallery")({
+	component: lazyRouteComponent($$splitComponentImporter$6, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Gallery — Soft Strip Photos Liverpool | North Soft Strip" },
+			{
+				name: "description",
+				content: "Browse photos of house, flat, kitchen, bathroom, ceiling, garage, shop and completed soft strip projects across Liverpool and Merseyside."
+			},
+			{
+				property: "og:title",
+				content: "Soft Strip Photo Gallery — North Soft Strip Liverpool"
+			},
+			{
+				property: "og:description",
+				content: "Real photos from residential and light commercial soft strip projects across Liverpool and Merseyside."
+			},
+			{
+				property: "og:url",
+				content: "/gallery"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/gallery"
+		}],
+		scripts: [{
+			type: "application/ld+json",
+			children: JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "CollectionPage",
+				name: "North Soft Strip Project Gallery",
+				description: "Photo portfolio of residential and light commercial soft strip projects completed across Liverpool and Merseyside.",
+				url: "https://strip-and-prep-pro.lovable.app/gallery",
+				about: "Soft strip, kitchen strip out, bathroom strip out, ceiling removal, garage clearance and commercial strip out projects."
+			})
+		}]
+	})
+});
+var $$splitComponentImporter$5 = () => import("./faq-KKnLmd2B.mjs");
+var Route$5 = createFileRoute("/faq")({
+	component: lazyRouteComponent($$splitComponentImporter$5, "component"),
+	head: () => ({
+		meta: [
+			{ title: "FAQ — Soft Strip Questions Answered | North Soft Strip" },
+			{
+				name: "description",
+				content: "Common questions about soft strip out, waste removal, pricing and turnaround times in Liverpool and Merseyside."
+			},
+			{
+				property: "og:title",
+				content: "Soft Strip FAQ"
+			},
+			{
+				property: "og:description",
+				content: "Answers to the most common questions we get from Liverpool homeowners, landlords and business owners."
+			},
+			{
+				property: "og:url",
+				content: "/faq"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/faq"
+		}],
+		scripts: [{
+			type: "application/ld+json",
+			children: JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				mainEntity: faqs.map((f) => ({
+					"@type": "Question",
+					name: f.q,
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: f.a
+					}
+				}))
+			})
+		}]
+	})
+});
+var $$splitComponentImporter$4 = () => import("./contact-B5nRXUxA.mjs");
+var Route$4 = createFileRoute("/contact")({
+	component: lazyRouteComponent($$splitComponentImporter$4, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Contact — North Soft Strip Liverpool" },
+			{
+				name: "description",
+				content: `Contact North Soft Strip in Liverpool. Call ${SITE.phoneDisplay}, WhatsApp or email — same-day response for soft strip enquiries across Merseyside.`
+			},
+			{
+				property: "og:title",
+				content: "Contact North Soft Strip"
+			},
+			{
+				property: "og:description",
+				content: "Same-day response for soft strip enquiries across Liverpool and Merseyside."
+			},
+			{
+				property: "og:url",
+				content: "/contact"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/contact"
+		}]
+	})
+});
+var $$splitComponentImporter$3 = () => import("./about-C2YoW0O0.mjs");
+var Route$3 = createFileRoute("/about")({
+	component: lazyRouteComponent($$splitComponentImporter$3, "component"),
+	head: () => ({
+		meta: [
+			{ title: "About Us — North Soft Strip Liverpool" },
+			{
+				name: "description",
+				content: "Liverpool-based soft strip specialists. Meet the team behind hundreds of clean, on-time strip outs across Merseyside."
+			},
+			{
+				property: "og:title",
+				content: "About North Soft Strip"
+			},
+			{
+				property: "og:description",
+				content: "Liverpool-based soft strip specialists serving homeowners, landlords, builders and local businesses across Merseyside."
+			},
+			{
+				property: "og:url",
+				content: "/about"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/about"
+		}]
+	})
+});
+var $$splitComponentImporter$2 = () => import("./routes-NkAtasgC.mjs");
+var Route$2 = createFileRoute("/")({
+	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
+	head: () => ({
+		meta: [
+			{ title: "North Soft Strip — Liverpool Soft Strip Contractors" },
+			{
+				name: "description",
+				content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside. Free quote today."
+			},
+			{
+				property: "og:title",
+				content: "North Soft Strip — Liverpool Soft Strip Contractors"
+			},
+			{
+				property: "og:description",
+				content: "Trusted Liverpool soft strip contractors for houses, flats, shops and light commercial units. Clean, insured, fast turnaround across Merseyside. Free quote today."
+			},
+			{
+				property: "og:url",
+				content: "/"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/"
+		}],
+		scripts: [{
+			type: "application/ld+json",
+			children: JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				mainEntity: faqs$1.map((f) => ({
+					"@type": "Question",
+					name: f.q,
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: f.a
+					}
+				}))
+			})
+		}]
+	})
+});
+var $$splitComponentImporter$1 = () => import("./services.index-qy33gtel.mjs");
+var Route$1 = createFileRoute("/services/")({
+	component: lazyRouteComponent($$splitComponentImporter$1, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Soft Strip Services — Liverpool & Merseyside | North Soft Strip" },
+			{
+				name: "description",
+				content: "Full list of soft strip and clearance services: house, flat, kitchen, bathroom, ceilings, partitions, retail and commercial strip out across Liverpool."
+			},
+			{
+				property: "og:title",
+				content: "Soft Strip Services in Liverpool"
+			},
+			{
+				property: "og:description",
+				content: "Careful strip out for homes, flats, shops and light commercial units — plus site clearance and licensed waste removal."
+			},
+			{
+				property: "og:url",
+				content: "/services"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/services"
+		}]
+	})
+});
+var $$splitComponentImporter = () => import("./areas.index-W5IrfHmH.mjs");
+var Route = createFileRoute("/areas/")({
+	component: lazyRouteComponent($$splitComponentImporter, "component"),
+	head: () => ({
+		meta: [
+			{ title: "Areas We Cover — Soft Strip Merseyside | North Soft Strip" },
+			{
+				name: "description",
+				content: "Soft strip contractors covering Liverpool, Wirral, Bootle, Knowsley, Sefton, Southport, St Helens and all of Merseyside."
+			},
+			{
+				property: "og:title",
+				content: "Areas We Cover — Liverpool & Merseyside"
+			},
+			{
+				property: "og:description",
+				content: "Local soft strip contractors covering the whole of Merseyside."
+			},
+			{
+				property: "og:url",
+				content: "/areas"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/areas"
+		}]
+	})
+});
+var TermsRoute = Route$11.update({
+	id: "/terms",
+	path: "/terms",
+	getParentRoute: () => Route$12
+});
+var SitemapDotxmlRoute = Route$10.update({
+	id: "/sitemap.xml",
+	path: "/sitemap.xml",
+	getParentRoute: () => Route$12
+});
+var QuoteRoute = Route$9.update({
+	id: "/quote",
+	path: "/quote",
+	getParentRoute: () => Route$12
+});
+var ProjectsRoute = Route$8.update({
+	id: "/projects",
+	path: "/projects",
+	getParentRoute: () => Route$12
+});
+var PrivacyRoute = Route$7.update({
+	id: "/privacy",
+	path: "/privacy",
+	getParentRoute: () => Route$12
+});
+var GalleryRoute = Route$6.update({
+	id: "/gallery",
+	path: "/gallery",
+	getParentRoute: () => Route$12
+});
+var FaqRoute = Route$5.update({
+	id: "/faq",
+	path: "/faq",
+	getParentRoute: () => Route$12
+});
+var ContactRoute = Route$4.update({
+	id: "/contact",
+	path: "/contact",
+	getParentRoute: () => Route$12
+});
+var AboutRoute = Route$3.update({
+	id: "/about",
+	path: "/about",
+	getParentRoute: () => Route$12
+});
+var IndexRoute = Route$2.update({
+	id: "/",
+	path: "/",
+	getParentRoute: () => Route$12
+});
+var ServicesIndexRoute = Route$1.update({
+	id: "/services/",
+	path: "/services/",
+	getParentRoute: () => Route$12
+});
+var AreasIndexRoute = Route.update({
+	id: "/areas/",
+	path: "/areas/",
+	getParentRoute: () => Route$12
+});
+var ServicesSlugRoute = Route$15.update({
+	id: "/services/$slug",
+	path: "/services/$slug",
+	getParentRoute: () => Route$12
+});
+var LiverpoolSlugRoute = Route$14.update({
+	id: "/liverpool/$slug",
+	path: "/liverpool/$slug",
+	getParentRoute: () => Route$12
+});
+var rootRouteChildren = {
+	IndexRoute,
+	AboutRoute,
+	ContactRoute,
+	FaqRoute,
+	GalleryRoute,
+	PrivacyRoute,
+	ProjectsRoute,
+	QuoteRoute,
+	SitemapDotxmlRoute,
+	TermsRoute,
+	AreasSlugRoute: Route$13.update({
+		id: "/areas/$slug",
+		path: "/areas/$slug",
+		getParentRoute: () => Route$12
+	}),
+	LiverpoolSlugRoute,
+	ServicesSlugRoute,
+	AreasIndexRoute,
+	ServicesIndexRoute
+};
+var routeTree = Route$12._addFileChildren(rootRouteChildren)._addFileTypes();
+var getRouter = () => {
+	return createRouter({
+		routeTree,
+		context: { queryClient: new QueryClient() },
+		scrollRestoration: true,
+		defaultPreloadStaleTime: 0
+	});
+};
+//#endregion
+export { getRouter };

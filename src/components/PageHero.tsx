@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-const heroImg = "/assets/hero-strip-out.jpg";
+const heroImg = "/assets/house-strip-out.jpeg";
 
 export function PageHero({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (

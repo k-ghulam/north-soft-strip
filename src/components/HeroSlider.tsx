@@ -11,11 +11,11 @@ interface Slide {
 }
 
 const SLIDES: Slide[] = [
-  { img: "/assets/hero-strip-out.jpg", eyebrow: "Residential Specialists", title: "Residential House Soft Strip", copy: "Precision soft strip for terraces, semis and detached homes across Liverpool & Merseyside." },
-  { img: "/assets/service-kitchen.jpg", eyebrow: "Kitchen Preparation", title: "Kitchen Strip Out & Preparation", copy: "Units, worktops, tiles and appliances carefully removed — ready for your new fit-out." },
-  { img: "/assets/service-bathroom.jpg", eyebrow: "Bathroom Clear-out", title: "Bathroom Strip Out & Clear-out", copy: "Suites, tiles and pipework removed cleanly, with all waste taken away." },
-  { img: "/assets/service-ceiling.jpg", eyebrow: "Structural Prep", title: "Garage Strip Out & Structural Prep", copy: "Full garage clearance and internal preparation, ready for conversion." },
-  { img: "/assets/service-retail.jpg", eyebrow: "Commercial Services", title: "Commercial Soft Strip Services", copy: "Shops, cafés, salons and light commercial units stripped ready for refit." },
+  { img: "/assets/house-strip-out.jpeg", eyebrow: "Residential Specialists", title: "Residential House Soft Strip", copy: "Precision soft strip for terraces, semis and detached homes across Liverpool & Merseyside." },
+  { img: "/assets/kitchen-strip-out.jpeg", eyebrow: "Kitchen Preparation", title: "Kitchen Strip Out & Preparation", copy: "Units, worktops, tiles and appliances carefully removed — ready for your new fit-out." },
+  { img: "/assets/bathroom-strip-out.jpeg", eyebrow: "Bathroom Clear-out", title: "Bathroom Strip Out & Clear-out", copy: "Suites, tiles and pipework removed cleanly, with all waste taken away." },
+  { img: "/assets/ceiling-removal.jpeg", eyebrow: "Structural Prep", title: "Garage Strip Out & Structural Prep", copy: "Full garage clearance and internal preparation, ready for conversion." },
+  { img: "/assets/commercial-strip-out.jpeg", eyebrow: "Commercial Services", title: "Commercial Soft Strip Services", copy: "Shops, cafés, salons and light commercial units stripped ready for refit." },
 ];
 
 export function HeroSlider() {

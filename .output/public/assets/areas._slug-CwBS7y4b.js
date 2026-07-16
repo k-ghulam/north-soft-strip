@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DGeXAQPT.js";import{t}from"./link-CGAuXtgO.js";var n=e(),r=()=>(0,n.jsxs)(`div`,{className:`pt-40 text-center`,children:[`Area not found. `,(0,n.jsx)(t,{to:`/areas`,className:`text-orange`,children:`See all areas`}),`.`]});export{r as notFoundComponent};

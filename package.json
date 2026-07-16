@@ -1,14 +1,10 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "north-soft-strip",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start"
-  },
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
   }
 }

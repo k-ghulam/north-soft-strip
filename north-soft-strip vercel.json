@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npx vinxi build",
+  "outputDirectory": ".output/public"
+}

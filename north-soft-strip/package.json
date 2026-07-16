@@ -4,9 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vinxi build",
-    "vercel-build": "vinxi build"
+    "dev": "vinxi dev",
+    "build": "npx vinxi build",
+    "start": "vinxi start"
+  },
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
